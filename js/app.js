@@ -5,43 +5,35 @@
 	qcedu.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise('/');
 		$stateProvider
-			.state({
-				name: 'home',
+			.state("home", {
 				url: '/',
 				templateUrl: 'modules/home.html'
 			})
-			.state({
-				name: 'netedu',
+			.state("netedu", {
 				url: '/netedu',
 				templateUrl: 'modules/netedu.html'
 			})
-			.state({
-				name: 'tvedu',
+			.state("tvedu", {
 				url: '/tvedu',
 				templateUrl: 'modules/tvedu.html'
 			})
-			.state({
-				name: 'adultedu',
+			.state("adultedu", {
 				url: '/adultedu',
 				templateUrl: 'modules/adultedu.html'
 			})
-			.state({
-				name: 'selfstudy',
+			.state("selfstudy", {
 				url: '/selfstudy',
 				templateUrl: 'modules/selfstudy.html'
 			})
-			.state({
-				name: 'teachingnotice',
+			.state("teachingnotice", {
 				url: '/teachingnotice',
 				templateUrl: 'modules/teachingnotice.html'
 			})
-			.state({
-				name: 'online',
+			.state("online", {
 				url: '/online',
 				templateUrl: 'modules/online.html'
 			})
-			.state({
-				name: 'about',
+			.state("about", {
 				url: '/about',
 				templateUrl: 'modules/about.html'
 			});
