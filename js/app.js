@@ -7,7 +7,10 @@
 		$stateProvider
 			.state("home", {
 				url: '/',
-				templateUrl: 'modules/home.html'
+				templateUrl: 'modules/home.html',
+				controller: ["$scope", function($scope) {
+
+				}]
 			})
 			.state("netedu", {
 				url: '/netedu',
@@ -98,29 +101,29 @@
 				}
 			}, 0);
 		};
-	});
-	qcedu.controller('enrollmentCtrl', function($scope, $http) {
+	})
+	.controller('enrollmentCtrl', ["$scope", "$http", function($scope, $http) {
 		var url = "action.php?act=enrollment";
 		$http.get(url).success(function(response) {
 			$scope.items = response;
 		});
-	});
-	qcedu.controller('guideCtrl', function($scope, $http) {
+	}])
+	.controller('guideCtrl', ["$scope", "$http", function($scope, $http) {
 		var url = "action.php?act=guide";
 		$http.get(url).success(function(response) {
 			$scope.items = response;
 		});
-	});
-	qcedu.controller('newCtrl', function($scope, $http) {
+	}])
+	.controller('newCtrl', ["$scope", "$http", function($scope, $http) {
 		var url = "action.php?act=edunews";
 		$http.get(url).success(function(response) {
 			$scope.items = response;
 		});
-	});
-	qcedu.controller('noticeCtrl', function($scope, $http) {
+	}])
+	.controller('noticeCtrl', ["$scope", "$http", function($scope, $http) {
 		var url = "action.php?act=notice";
 		$http.get(url).success(function(response) {
 			$scope.items = response;
 		});
-	});
+	}]);
 })(window.angular);
