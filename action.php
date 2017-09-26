@@ -1,5 +1,5 @@
 <?php
-	include "zz/php/init.php";
+	include "zz/php/db_config.php";
 	$con = mysqli_connect($dbhost, $dbuser, $dbpass);
 	$act=$_REQUEST['act'];
 	

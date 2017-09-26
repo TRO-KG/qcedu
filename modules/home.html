@@ -80,7 +80,7 @@
 				<div class="news_list">
 					<ul class="clearfix">
 						<li class="clearfix" ng-repeat="item in items track by $index">
-							<a ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+							<a ui-sref="infoview({id:item.article_id})">{{item.article_title}}</a>
 						</li>
 					</ul>
 				</div>

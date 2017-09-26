@@ -41,6 +41,11 @@
 				url: '/school/{id}',
 				templateUrl: 'modules/school.html',
 				controller: "summaryCtrl"
+			})
+			.state("infoview", {
+				url: '/infoview/{id}',
+				templateUrl: 'modules/infoview.html',
+				controller: "infoCtrl"
 			});
 	}]);
 
@@ -79,6 +84,7 @@
 			var url = "action.php?act=netschool";
 			$http.get(url).success(function(response) {
 				$scope.coopschools = response;
+				console.log(response);
 			});
 			$scope.renderFinish = function() {
 				$timeout(function() {
@@ -130,6 +136,10 @@
 			});
 		}])
 		.controller("summaryCtrl", ["$scope", "$stateParams", "$http", function($scope, $stateParams, $http) {
+			console.log($stateParams);
+			console.log($http);
+		}])
+		.controller("infoCtrl", ["$scope", "$stateParams", "$http", function($scope, $stateParams, $http) {
 			console.log($stateParams);
 			console.log($http);
 		}]);
