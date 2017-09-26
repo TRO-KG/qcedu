@@ -49,7 +49,8 @@
 			templateUrl: 'modules/head.html',
 			replace: true
 		}
-	}]).directive("qcBigbanner", [function() {
+	}])
+	.directive("qcBigbanner", [function() {
 		return {
 			restrict: 'E',
 			templateUrl: 'modules/banner.html',
@@ -63,13 +64,30 @@
 				});
 			}
 		}
-	}]).directive('qcFooter', [function() {
+	}])
+	.directive('qcFooter', [function() {
 		return {
 			restrict: 'E',
 			templateUrl: 'modules/foote.html',
 			replace: true
 		}
-	}]).directive('repeatFinish', function() {
+	}])
+	.directive("qcNetschool", [function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'modules/banner.html',
+			replace: true,
+			controller: function() {
+				$('.banner').slick({
+					dots: true,
+					autoplay: true,
+					arrows: false,
+					autoplaySpeed: 3000,
+				});
+			}
+		}
+	}]);
+	/*.directive('repeatFinish', function() {
 		return {
 			link: function(scope, element, attr) {
 				if(scope.$last == true) {
@@ -77,10 +95,10 @@
 				}
 			}
 		};
-	});;
+	});*/
 
 	//   *****   控制器       ******
-	qcedu.controller('schoolCtrl', function($scope, $http, $timeout) {
+	/*qcedu.controller('schoolCtrl', function($scope, $http, $timeout) {
 		var url = "action.php?act=netschool";
 		$http.get(url).success(function(response) {
 			$scope.coopschools = response;
@@ -101,8 +119,8 @@
 				}
 			}, 0);
 		};
-	})
-	.controller('enrollmentCtrl', ["$scope", "$http", function($scope, $http) {
+	})*/
+	qcedu.controller('enrollmentCtrl', ["$scope", "$http", function($scope, $http) {
 		var url = "action.php?act=enrollment";
 		$http.get(url).success(function(response) {
 			$scope.items = response;
