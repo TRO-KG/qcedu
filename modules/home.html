@@ -1,181 +1,204 @@
 <div class="home_schoolbox">
-      <div class="mainwrap">
-              <div class="row">
-                   <div class="col-xs-12 col-sm-12 col-md-3 float_r">
-                         <div class="apply">
-                            <!--S 代码-->
-                           <div class="TB-focus">
-                                <div class="hd">
-                                    <ul>
-                                        <li class="on"></li>
-                                    </ul>
-                                </div>
-                                <div class="bd">
-                                    <div class="tempWrap">
-                                    	<ul>
-                                    		<li class="clone">
-                                    			<a href="#" target="_blank"><img src="upload/201762916193829036.jpg"></a>
-                                    		</li>
-                                        <li>
-                                        	<a href="#" target="_blank"><img src="upload/201762916193829036.jpg"></a>
-                                        </li>
-				                                <li class="clone">
-				                                	<a href="#" target="_blank"><img src="upload/201762916193829036.jpg"></a>
-				                                </li>
-                                    	</ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <script type="text/javascript">
-                            	jQuery(".TB-focus").slide({ mainCell:".bd ul",effect:"leftLoop",autoPlay:true,delayTime:200 });
-                            </script>
-                    <!--E 代码-->
-                         </div>
-                   </div>
-                   <div class="col-xs-12 col-sm-12  col-md-9 padd0 float_l">
-                           <!--S 代码开始-->
-                           <div class="picScroll-left" ng-controller="schoolCtrl">
-                                    <div class="hd">
-                                        <a>网络教育 · 合作院校</a>
-                                        <ul>
-                                        </ul>
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div class="bd">
-                                        <div class="tempWrap" >
-                                        	<ul class="picList">
-                                        		<li ng-repeat="coopschool in coopschools track by $index" repeat-finish>
-                                        			<div class="pic"><a href='#'><img ng-src="{{coopschool.school_picpath}}"/></a></div>
-                                        			<div class="title"><a href="#">{{coopschool.school_name}}</a></div>
-                                        		</li>
-                                        	</ul>
-                                        </div>
-                        
-                                    </div>
-                               </div>
-                           
-                           <!--E 代码结束-->
-                   </div>
-              </div>
-      </div>
+	<div class="mainwrap">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-3 float_r">
+				<div class="apply">
+					<!--S 代码-->
+					<div class="TB-focus">
+						<div class="hd">
+							<ul>
+								<li class="on"></li>
+							</ul>
+						</div>
+						<div class="bd">
+							<div class="tempWrap">
+								<ul>
+									<li class="clone">
+										<a href="#" target="_blank"><img src="upload/201762916193829036.jpg"></a>
+									</li>
+									<li>
+										<a href="#" target="_blank"><img src="upload/201762916193829036.jpg"></a>
+									</li>
+									<li class="clone">
+										<a href="#" target="_blank"><img src="upload/201762916193829036.jpg"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+						jQuery(".TB-focus").slide({
+							mainCell: ".bd ul",
+							effect: "leftLoop",
+							autoPlay: true,
+							delayTime: 200
+						});
+					</script>
+					<!--E 代码-->
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12  col-md-9 padd0 float_l">
+				<!--S 代码开始-->
+				<div class="picScroll-left" ng-controller="schoolCtrl">
+					<div class="hd">
+						<a>网络教育 · 合作院校</a>
+						<ul>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<div class="bd">
+						<div class="tempWrap">
+							<ul class="picList">
+								<li ng-repeat="coopschool in coopschools track by $index" repeat-finish>
+									<div class="pic">
+										<a ui-sref="school({id:coopschool.school_id})"><img ng-src="{{coopschool.school_picpath}}" /></a>
+									</div>
+									<div class="title">
+										<a ui-sref="school({id:coopschool.school_id})">{{coopschool.school_name}}</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<!--E 代码结束-->
+			</div>
+		</div>
+	</div>
 </div>
 <div class="mainwrap mar_t15 padd_b50">
-    <div class="row">
-         <div class="col-xs-12 col-sm-12  col-md-9 padd0">
-                <div class="newsbox" ng-controller="enrollmentCtrl">
-                      <div class="lan3 clearfix"><p class="float_l">招生简章</p><a href="more.php" class="float_r">更多&gt;</a></div>
-                      <!--S news_list-->
-                      <div class="news_list">
-                               <ul class="clearfix">
-                                  <li class="clearfix" ng-repeat="item in items track by $index">
-                                  	<a ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
-                                  </li>
-                               </ul>
-                     </div>
-                     <!--E news_list-->
-                </div>
-                <div class="newsbox"  ng-controller="guideCtrl">
-                      <div class="lan3 clearfix"><p class="float_l">报考指南</p><a href="more.php" class="float_r">更多&gt;</a></div>
-                      <!--S news_list-->
-                      <div class="news_list">
-                               <ul class="clearfix">
-                                  <li class="clearfix"  ng-repeat="item in items track by $index">
-                                  	<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
-                                  </li>
-                               </ul>
-                     </div>
-                     <!--E news_list-->
-                </div>
-                <div class="newsbox" ng-controller="newCtrl">
-                      <div class="lan3 clearfix"><p class="float_l">教育新闻</p><a href="info.asp?pathstr=317" class="float_r">更多&gt;</a></div>
-                      <!--S news_list-->
-                      <div class="news_list" >
-                               <ul class="clearfix">
-                                      <li class="clearfix" ng-repeat="item in items track by $index">
-                                      	<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
-                                      </li>
-                               </ul>
-                     </div>
-                     <!--E news_list-->
-                </div>
-                <div class="newsbox"  ng-controller="noticeCtrl">
-                      <div class="lan3 clearfix"><p class="float_l">教务通知</p><a href="info.asp?pathstr=45" class="float_r">更多&gt;</a></div>
-                      <!--S news_list-->
-                      <div class="news_list">
-                               <ul class="clearfix">
-                                      <li class="clearfix" ng-repeat="item in items track by $index">
-                                      	<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
-                                      </li>
-                               </ul>
-                     </div>
-                     <!--E news_list-->
-                </div>
-                <div class="clear"></div>
-                <div class="education_box2">
-                      <h3 class="hidden visible-xs">三大学习方案 让考试更简单</h3>
-                      <div class="col-xs-12 col-sm-4 education_item2">
-                           <a href="#" target="_blank"><img src="images/education_icon1.png">专升本 </a>
-                      </div>
-                      <div class="col-xs-12 col-sm-4 education_item2">
-                           <a href="#" target="_blank"><img src="images/education_icon2.png">高起专 </a>
-                      </div>
-                      <div class="col-xs-12 col-sm-4 education_item2">
-                           <a href="#" target="_blank"><img src="images/education_icon3.png">高升本</a>
-                      </div>
-                      <div class="clear"></div>
-                      <div class="btn_1">
-                            <a href="#">在线定制学历</a>
-                      </div>
-                </div>
-         </div>
-         <div class="col-xs-12 col-sm-12 col-md-3 hidden-sm">
-              <div class="asside_box1">
-                      <div class="contact_box">
-                          <a href="#" target="_blank"><img src="images/contact_img.png"></a>
-                          <div class="wechat">
-                                <img src="images/wechat1.jpg">
-                                <p>扫一扫获取报名资料</p>
-                          </div>
-                          <div class="online">
-                                 <p>免费通话咨询热线：</p>
-                                 <p style="color:#f4bc35 ; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:29px;">15303718943</p>
-                                
-                                 <div class="myqq">
-                                     <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1007614025&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank">张老师</a>                    
-									 </div>
-                          </div>
-                      </div>
-                      <div class="education_box">
-                           <div class="lan1"><p>学籍查询</p></div> 
-                           <div class="row">
-                                  <a class="col-xs-6 col-sm-6 " style="padding-right:5px;" href="http://www.chsi.com.cn/xlcx/lscx/query.do" target="_blank">
-                                         <dl class="education_item bg1">
-                                             <dt><img src="images/school_icon1.png"></dt>
-                                             <dd>专升本</dd>
-                                         </dl>
-                                    </a> 
-                                    <a class="col-xs-6 col-sm-6" style="padding-left:5px;" href="http://www.chsi.com.cn/xlcx/lscx/query.do" target="_blank">    
-                                         <dl class="education_item bg2">
-                                             <dt><img src="images/school_icon2.png"></dt>
-                                             <dd>高起专</dd>
-                                         </dl>
-                                     </a> 
-                                     <a class="col-xs-6 col-sm-6" style="padding-right:5px;" href="http://www.chsi.com.cn/xlcx/lscx/query.do" target="_blank">     
-                                         <dl class="education_item bg3">
-                                             <dt><img src="images/school_icon3.png"></dt>
-                                             <dd>高升本</dd>
-                                         </dl>
-                                      </a> 
-                                      <a class="col-xs-6 col-sm-6" style="padding-left:5px;" href="#"> 
-                                         <dl class="bg4">
-                                             <dt>学历成就一切</dt>
-                                             <dd>......</dd>
-                                         </dl>
-                                       </a>
-                           </div>
-                      </div>
-                      
-              </div>
-         </div>
-    </div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12  col-md-9 padd0">
+			<div class="newsbox" ng-controller="enrollmentCtrl">
+				<div class="lan3 clearfix">
+					<p class="float_l">招生简章</p>
+					<a href="more.php" class="float_r">更多&gt;</a>
+				</div>
+				<!--S news_list-->
+				<div class="news_list">
+					<ul class="clearfix">
+						<li class="clearfix" ng-repeat="item in items track by $index">
+							<a ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+						</li>
+					</ul>
+				</div>
+				<!--E news_list-->
+			</div>
+			<div class="newsbox" ng-controller="guideCtrl">
+				<div class="lan3 clearfix">
+					<p class="float_l">报考指南</p>
+					<a href="more.php" class="float_r">更多&gt;</a>
+				</div>
+				<!--S news_list-->
+				<div class="news_list">
+					<ul class="clearfix">
+						<li class="clearfix" ng-repeat="item in items track by $index">
+							<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+						</li>
+					</ul>
+				</div>
+				<!--E news_list-->
+			</div>
+			<div class="newsbox" ng-controller="newCtrl">
+				<div class="lan3 clearfix">
+					<p class="float_l">教育新闻</p>
+					<a href="info.asp?pathstr=317" class="float_r">更多&gt;</a>
+				</div>
+				<!--S news_list-->
+				<div class="news_list">
+					<ul class="clearfix">
+						<li class="clearfix" ng-repeat="item in items track by $index">
+							<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+						</li>
+					</ul>
+				</div>
+				<!--E news_list-->
+			</div>
+			<div class="newsbox" ng-controller="noticeCtrl">
+				<div class="lan3 clearfix">
+					<p class="float_l">教务通知</p>
+					<a href="info.asp?pathstr=45" class="float_r">更多&gt;</a>
+				</div>
+				<!--S news_list-->
+				<div class="news_list">
+					<ul class="clearfix">
+						<li class="clearfix" ng-repeat="item in items track by $index">
+							<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+						</li>
+					</ul>
+				</div>
+				<!--E news_list-->
+			</div>
+			<div class="clear"></div>
+			<div class="education_box2">
+				<h3 class="hidden visible-xs">三大学习方案 让考试更简单</h3>
+				<div class="col-xs-12 col-sm-4 education_item2">
+					<a href="#" target="_blank"><img src="images/education_icon1.png">专升本 </a>
+				</div>
+				<div class="col-xs-12 col-sm-4 education_item2">
+					<a href="#" target="_blank"><img src="images/education_icon2.png">高起专 </a>
+				</div>
+				<div class="col-xs-12 col-sm-4 education_item2">
+					<a href="#" target="_blank"><img src="images/education_icon3.png">高升本</a>
+				</div>
+				<div class="clear"></div>
+				<div class="btn_1">
+					<a href="#">在线定制学历</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-3 hidden-sm">
+			<div class="asside_box1">
+				<div class="contact_box">
+					<a href="#" target="_blank"><img src="images/contact_img.png"></a>
+					<div class="wechat">
+						<img src="images/wechat1.jpg">
+						<p>扫一扫获取报名资料</p>
+					</div>
+					<div class="online">
+						<p>免费通话咨询热线：</p>
+						<p style="color:#f4bc35 ; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:29px;">15303718943</p>
+
+						<div class="myqq">
+							<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1007614025&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank">张老师</a>
+						</div>
+					</div>
+				</div>
+				<div class="education_box">
+					<div class="lan1">
+						<p>学籍查询</p>
+					</div>
+					<div class="row">
+						<a class="col-xs-6 col-sm-6 " style="padding-right:5px;" href="http://www.chsi.com.cn/xlcx/lscx/query.do" target="_blank">
+							<dl class="education_item bg1">
+								<dt><img src="images/school_icon1.png"></dt>
+								<dd>专升本</dd>
+							</dl>
+						</a>
+						<a class="col-xs-6 col-sm-6" style="padding-left:5px;" href="http://www.chsi.com.cn/xlcx/lscx/query.do" target="_blank">
+							<dl class="education_item bg2">
+								<dt><img src="images/school_icon2.png"></dt>
+								<dd>高起专</dd>
+							</dl>
+						</a>
+						<a class="col-xs-6 col-sm-6" style="padding-right:5px;" href="http://www.chsi.com.cn/xlcx/lscx/query.do" target="_blank">
+							<dl class="education_item bg3">
+								<dt><img src="images/school_icon3.png"></dt>
+								<dd>高升本</dd>
+							</dl>
+						</a>
+						<a class="col-xs-6 col-sm-6" style="padding-left:5px;" href="#">
+							<dl class="bg4">
+								<dt>学历成就一切</dt>
+								<dd>......</dd>
+							</dl>
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 </div>
