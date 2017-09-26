@@ -1,0 +1,263 @@
+<!--footer开始-->
+<footer>
+<div class="linkwrap hidden-xs">
+     <div class="mainwrap link">
+           <h3>友情链接</h3> 
+           <ul>
+           
+              <li><a href="https://my.chsi.com.cn/archive/index.jsp"  target="_blank">学籍查询</a></li>
+             
+              <li><a href="http://www.chsi.com.cn/xlcx/index.jsp"  target="_blank">学历查询</a></li>
+             
+           </ul>
+           <div class="clear"></div>
+     </div>
+</div>
+<div id="footer">
+   <div class="mainwrap footer ">
+         <p align="left">
+	<br />
+</p>
+<p>
+	<table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<td style="text-align:left;vertical-align:top;">
+<a href="#" target="_blank"><span style="color:#FFFFFF;">途帆首页</span><a href="#" target="_blank"></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span><a href="#" target="_blank"><span style="color:#FFFFFF;">教务通知</span><span></span></a><span style="color:#FFFFFF;">&nbsp;</span><br />
+<span style="color:#FFFFFF;"> 网</span><a href="#" target="_blank"><span style="color:#FFFFFF;">络教育</span></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span><a href="#" target="_blank"><span style="color:#FFFFFF;">在线报名</span></a><br />
+<a href="#" target="_blank"><span style="color:#FFFFFF;">成人教育</span></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span><a href="#" target="_blank"><span style="color:#FFFFFF;">关于我们</span></a><br />
+<a href="#" target="_blank"><span style="color:#FFFFFF;">电大开放</span></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span><a href="#" target="_blank"><span style="color:#FFFFFF;">咨询老师</span></a><br />
+<a href="#" target="_blank"><span style="color:#FFFFFF;">自学考试</span><br />
+</a> 
+				</td>
+				<td style="text-align:left;vertical-align:top;">
+					<p align="left">
+						<span style="color:#FFFFFF;">&nbsp;</span><span style="color:#FFFFFF;">联系我们：</span><br />
+<span style="color:#FFFFFF;">QQ1：</span><span style="color:#FFFFFF;">1007614025 张老师</span><br />
+<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">手机：15303718943（微信同号）</span> 
+						<p align="left">
+							<span style="color:#FFFFFF;">中心地址：郑州市二七区大学南路和中秋路交叉口</span> 
+						</p>
+						<p>
+							<br />
+						</p>
+							</td>
+							<td style="text-align:left;vertical-align:top;">
+								<span style="color:#FFFFFF;">手机扫一扫：</span><br />
+<img style="width:114px;height:108px;" alt="" align="left" src="../images/wechat1.jpg" width="160" height="149" /> 
+							</td>
+							<td>
+								&nbsp;
+							</td>
+								</tr>
+									</tbody>
+										</table>
+										<p>
+											<br />
+										</p> 
+   </div>
+</div> 
+</footer>
+<!--footer结束-->
+
+<!--移动端 Mmenu S-->
+<div class="phonefooternav">
+		<ul class="clearfix">
+			<li>
+				<a href="tel:13270871699">
+					<i class="iconfont"><img src="images/r_contact.png"/></i>
+					<span>一键电话</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" target="_blank">
+					<i class="iconfont"><img src="images/r_message.png"/></i>
+					<span>在线留言</span>
+				</a>
+			</li>
+			<li>
+				<a href="contact.asp">
+					<i class="iconfont"><img src="images/r_phone.png"/></i>
+					<span>联系我们</span>
+				</a>
+			</li>
+			<li>
+				<a href="index.asp">
+					<i class="iconfont"><img src="images/r_home.png"/></i>
+					<span>返回首页</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+ <!--移动端  Mmenu E-->
+
+<!-- S Back -->
+<div class="go-top dn" id="go-top"><a href="javascript:;" class="go"></a></div>
+<script>
+$(function(){
+	$(window).on('scroll',function(){
+		var st = $(document).scrollTop();
+		if( st>0 ){
+			if( $('#main-container').length != 0  ){
+				var w = $(window).width(),mw = $('#main-container').width();
+				if( (w-mw)/2 > 70 )
+					$('#go-top').css({'left':(w-mw)/2+mw+20});
+				else{
+					$('#go-top').css({'left':'auto'});
+				}
+			}
+			$('#go-top').fadeIn(function(){
+				$(this).removeClass('dn');
+			});
+		}else{
+			$('#go-top').fadeOut(function(){
+				$(this).addClass('dn');
+			});
+		}	
+	});
+	$('#go-top .go').on('click',function(){
+		$('html,body').animate({'scrollTop':0},500);
+	});
+
+	$('#go-top .uc-2vm').hover(function(){
+		$('#go-top .uc-2vm-pop').removeClass('dn');
+	},function(){
+		$('#go-top .uc-2vm-pop').addClass('dn');
+	});
+});
+</script> 
+<!-- E Back -->
+<!--移动端导航-->
+<script src="js/jquery.mmenu.all.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<script language="javascript" type="text/javascript">
+	function checkform()
+	{
+		if(myform.txt_name.value=="")
+		{
+			alert("请输入姓名！");
+			myform.txt_name.focus();
+			return false;			
+		}
+		if(myform.txt_qq.value=="")
+		{
+			alert("请输入专业！");
+			myform.txt_qq.focus();
+			return false;			
+		}
+		if(myform.txt_where.value=="")
+		{
+			alert("请输入地区！");
+			myform.txt_where.focus();
+			return false;			
+		}
+		if(myform.txt_tel.value=="")
+		{
+			alert("请输入手机！");
+			myform.txt_tel.focus();
+			return false;			
+		}
+		if(myform.txt_email.value=="")
+		{
+			alert("请输入E-mail！");
+			myform.txt_email.focus();
+			return false;			
+		}
+	}
+</script>
+<!--弹窗口-->
+		   <div style="display: none;" id="comp-dialog2" class="dialog  calculator_dialog" >
+			  <!--dialog_con开始-->
+			  <div class="dialog_con">
+			                      <h3 style="font-size:24px; line-height:45px; text-align:center;color: #0064b9; padding-top:20px;">测测你的专业前景如何</h3>
+					              <div class="form_common" > 
+                                           <form class="form-horizontal"  action='?action=save&bookid=9' method='post' name="myform"  onSubmit='javascript:return checkform();' >
+                                              <div class="form-group">
+                                                    <label for="name" class="col-xs-12 col-sm-2 control-label">姓名：</label>
+                                                    <div class="col-xs-11  col-sm-8">
+                                                      <input name="txt_name" id="txt_name"  type="text" class="form-control" placeholder="姓名" />
+                                                    </div>
+                                                    <div class="col-xs-1  col-sm-2 help-tips ">
+                                                        <span class="glyphicon login-exclamation-sign"></span>*                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!--<div class="col-xs-12  col-sm-10 col-sm-offset-2 error-tips ">
+                                                         <span class="glyphicon login-exclamation-signred"></span>  请输入您的姓名！
+                                                    </div>-->
+                                              </div>
+											  <div class="form-group">
+                                                    <label for="address" class="col-xs-12 col-sm-2 control-label">专业：</label>
+                                                    <div class="col-xs-11  col-sm-8">
+                                                      <input id="txt_qq" type="text" name="txt_qq" class="form-control" placeholder="专业" />
+                                                    </div>
+                                                    <div class="col-xs-1  col-sm-2 help-tips ">
+                                                        <span class="glyphicon login-exclamation-sign"></span>*                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!--<div class="col-xs-12  col-sm-10 col-sm-offset-2 error-tips ">
+                                                         <span class="glyphicon login-exclamation-signred"></span>  请输入详细地址！
+                                                    </div>-->
+                                              </div>
+											  <div class="form-group">
+                                                    <label for="address" class="col-xs-12 col-sm-2 control-label">地区：</label>
+                                                    <div class="col-xs-11  col-sm-8">
+                                                      <input  id="txt_where" type="text" name="txt_where" class="form-control" placeholder="地区" />
+                                                    </div>
+                                                    <div class="col-xs-1  col-sm-2 help-tips ">
+                                                        <span class="glyphicon login-exclamation-sign"></span>*                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!--<div class="col-xs-12  col-sm-10 col-sm-offset-2 error-tips ">
+                                                         <span class="glyphicon login-exclamation-signred"></span>  请输入详细地址！
+                                                    </div>-->
+                                              </div>
+                                              <div class="form-group">
+                                                    <label for="phone" class="col-xs-12 col-sm-2 control-label">手机：</label>
+                                                    <div class="col-xs-11  col-sm-8">
+                                                      <input  id="txt_tel" type="text" name="txt_tel" class="form-control" placeholder="手机" />
+                                                    </div>
+                                                    <div class="col-xs-1  col-sm-2 help-tips ">
+                                                        <span class="glyphicon login-exclamation-sign"></span>*                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!--<div class="col-xs-12  col-sm-10 col-sm-offset-2 error-tips ">
+                                                         <span class="glyphicon login-exclamation-signred"></span>  请输入联系电话！
+                                                    </div>-->
+                                              </div>
+                                              <div class="form-group">
+                                                    <label for="email" class="col-xs-12 col-sm-2 control-label">E-mail：</label>
+                                                    <div class="col-xs-11  col-sm-8">
+                                                      <input id="txt_email" type="text" name="txt_email" class="form-control" placeholder="请输入E-mail" />
+                                                    </div>
+                                                    <div class="col-xs-1  col-sm-2 help-tips ">
+                                                        <span class="glyphicon login-exclamation-sign"></span>*                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!--<div class="col-xs-12  col-sm-10 col-sm-offset-2 error-tips ">
+                                                         <span class="glyphicon login-exclamation-signred"></span>  请输入E-mail！
+                                                    </div>-->
+                                                    </div>
+                                                  <div class="form-group">
+                                                        <div class="col-xs-12  col-sm-8  col-sm-offset-2 ">
+                                                          <input type="submit" class="btn btn-brown btn-block" value="立即测评" />
+                                                        </div>
+                                                  </div>
+												  <div class="clear"></div>
+                                        </form>
+										<div class="clear"></div>
+                                    </div>
+
+			  </div>
+			  <!--dialog_con结束-->
+			  <div class="button_wrap">
+				  <a href="javascript:;" class="btn-grey-1"></a>
+			  </div>
+		  </div>   
+		   <script>
+			 $(function () {
+				 dialogbox("#calculate2", "#comp-dialog2", ".btn-grey-1");  //
+			 })
+		  </script>
+		   <!--弹窗口--> 
+</div>
+<!-- E section-->
+
+<div class="clear"></div>
+</body>
+</html>
