@@ -44,7 +44,7 @@
 				controller: "infoCtrl"
 			})
 			.state("info", {
-				url: '/info/{id}',
+				url: '/info',
 				templateUrl: 'modules/info.html',
 				controller: "infoCtrl"
 			})
@@ -53,6 +53,14 @@
 				views: {
 					"content@info": {
 						templateUrl: 'modules/jiaowu.html'
+					}
+				}
+			})
+			.state("info.jiaowu.aaa", {
+				url: '/aaa',
+				views: {
+					"content@info": {
+						templateUrl: 'modules/aaa.html'
 					}
 				}
 			})
@@ -97,6 +105,13 @@
 			templateUrl: 'modules/head.html',
 			replace: true
 		}
+	}]).directive('qcAcademy', [function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'modules/academy.html',
+			replace: true,
+			controller: "academyCtrl"
+		}
 	}]).directive("qcBigbanner", [function() {
 		return {
 			restrict: 'E',
@@ -117,8 +132,8 @@
 					scope.renderFinish();
 				}
 			}
-		};
-	});;
+		}
+	});
 
 	//   *****   控制器       ******
 	qcedu.controller('schoolCtrl', function($scope, $http, $timeout) {
@@ -167,12 +182,22 @@
 				$scope.items = response;
 			});
 		}])
-		.controller("bannerCtrl", ["$scope", function() {
+		.controller("bannerCtrl", ["$scope", function($scope) {
 			$('.banner').slick({
 				dots: true,
 				autoplay: true,
 				arrows: false,
 				autoplaySpeed: 3000,
+			});
+		}])
+		.controller("academyCtrl", ["$scope", function($scope) {
+			$(".picScroll-top").slide({
+				ttitCell: ".hd ul",
+				mainCell: ".bd ul",
+				autoPage: true,
+				effect: "topLoop",
+				autoPlay: true,
+				vis: 2
 			});
 		}])
 		.controller("summaryCtrl", ["$scope", "$stateParams", "$http", function($scope, $stateParams, $http) {}])
