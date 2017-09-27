@@ -1,90 +1,79 @@
 <header>
-<div id="header">
-    <div id="top" class="hidden-xs">
-         <div class="mainwrap clearfix">
-                <div class="row top">
-                        <div class="col-sm-3">
-                           <span class="float_l">你好，欢迎来到启辰教育！</span>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="menu float_r">
-                                   <a href="#" target="_blank">高起专</a>
-                                   <a href="#" target="_blank">专升本</a>
-                                   <a href="#" target="_blank">高起本</a>
-                                   <a href="#">在线报名</a>
-                                   <a href="#">联系我们</a>
-                            </div>
-                        </div>
-                </div>
-         </div>
-    </div>
-    <div class="mainwrap head clearfix">
-        <div class="logo float_l" ><a href="#"><img src="images/logo.png"/></a></div>
-        <div class="tel float_r hidden-xs">
-               <a>153-0371-8943</a>
-               <p>全国服务咨询热线：</p>
-        </div>      
-    </div> 
-    <div class="clear"></div> 
-    <!--S nav-->
-    <div class="navbar hidden-xs ">
-          <ul class="mainwrap nav">
-              <li class="m">
-                    <h3><a ui-sref="home" ui-sref-active="current">启辰首页</a></h3>
-              </li>
-              <li  class="m">
-                    <h3><a ui-sref="netedu" ui-sref-active="current">网络教育</a></h3>
-              </li>
-              <li  class="m">
-                    <h3><a ui-sref="adultedu" ui-sref-active="current">成人教育</a></h3>
-              </li>
-              <li  class="m">
-                    <h3><a ui-sref="tvedu" ui-sref-active="current">电大开放</a></h3>
-              </li>
-              
-              <li  class="m">
-                    <h3><a ui-sref="selfstudy" ui-sref-active="current">自学考试</a></h3>
-              </li>
-              <li  class="m">
-                    <h3><a ui-sref="teachingnotice" ui-sref-active="current">教务通知</a></h3>
-                    <ul class="sub">
-                    	
-                        <li><a href="#/teachingnotice">教务通知</a></li>
-                        
-                        <li><a href="#">招生简章</a></li>
-                        
-                        <li><a href="#">报考指南</a></li>
-                        
-                        <li><a href="#">教育新闻</a></li>
-                        
-                        <li><a href="#">职业资格</a></li>
-                        
-                    </ul>
-              </li>
-              <li  class="m">
-                    <h3><a ui-sref="online" ui-sref-active="current">在线报名 </a></h3>
-              </li>
-              <li  class="m">
-                    <h3><a ui-sref="about" ui-sref-active="current">关于我们</a></h3>
-              </li>
-           </ul>
-            <script type="text/javascript">
-            jQuery(".nav").slide({ 
-                    type:"menu",
-                    titCell:".m",
-                    targetCell:".sub",
-                    effect:"slideDown",
-                    delayTime:300,
-                    triggerTime:0,
-                    returnDefault:true
-                });
-            </script> 
-    </div>
-    <!--E nav--> 
-    <a href="#mmenu" class="phone-nav hidden visible-xs">
-		 <span></span>
-	     <span></span>
-	     <span></span>
-	 </a>
-</div> 
+	<div id="header">
+		<div id="top" class="hidden-xs">
+			<div class="mainwrap clearfix">
+				<div class="row top">
+					<div class="col-sm-3">
+						<span class="float_l">你好，欢迎来到启辰教育！</span>
+					</div>
+					<div class="col-sm-9">
+						<div class="menu float_r">
+							<a href="#" target="_blank">高起专</a>
+							<a href="#" target="_blank">专升本</a>
+							<a href="#" target="_blank">高起本</a>
+							<a href="#">在线报名</a>
+							<a href="#">联系我们</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mainwrap head clearfix">
+			<div class="logo float_l">
+				<a href="#"><img src="images/logo.png" /></a>
+			</div>
+			<div class="tel float_r hidden-xs">
+				<a>153-0371-8943</a>
+				<p>全国服务咨询热线：</p>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!--S nav-->
+		<div class="navbar hidden-xs ">
+			<ul class="mainwrap nav">
+				<li class="m">
+					<h3><a ui-sref="home" ui-sref-active="current">启辰首页</a></h3>
+				</li>
+				<li class="m">
+					<h3><a ui-sref="netedu" ui-sref-active="current">网络教育</a></h3>
+				</li>
+				<li class="m">
+					<h3><a ui-sref="adultedu" ui-sref-active="current">成人教育</a></h3>
+				</li>
+				<li class="m">
+					<h3><a ui-sref="tvedu" ui-sref-active="current">电大开放</a></h3>
+				</li>
+
+				<li class="m">
+					<h3><a ui-sref="selfstudy" ui-sref-active="current">自学考试</a></h3>
+				</li>
+				<li class="m">
+					<h3><a ui-sref="info.jiaowu" ui-sref-active="current">教务通知</a></h3>
+				</li>
+				<li class="m">
+					<h3><a ui-sref="online" ui-sref-active="current">在线报名 </a></h3>
+				</li>
+				<li class="m">
+					<h3><a ui-sref="about" ui-sref-active="current">关于我们</a></h3>
+				</li>
+			</ul>
+			<script type="text/javascript">
+				jQuery(".nav").slide({
+					type: "menu",
+					titCell: ".m",
+					targetCell: ".sub",
+					effect: "slideDown",
+					delayTime: 300,
+					triggerTime: 0,
+					returnDefault: true
+				});
+			</script>
+		</div>
+		<!--E nav-->
+		<a href="#mmenu" class="phone-nav hidden visible-xs">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+	</div>
 </header>

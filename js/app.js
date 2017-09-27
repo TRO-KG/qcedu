@@ -25,10 +25,6 @@
 				url: '/selfstudy',
 				templateUrl: 'modules/selfstudy.html'
 			})
-			.state("teachingnotice", {
-				url: '/teachingnotice',
-				templateUrl: 'modules/teachingnotice.html'
-			})
 			.state("online", {
 				url: '/online',
 				templateUrl: 'modules/online.html'
@@ -46,6 +42,51 @@
 				url: '/infoview/{id}',
 				templateUrl: 'modules/infoview.html',
 				controller: "infoCtrl"
+			})
+			.state("info", {
+				url: '/info/{id}',
+				templateUrl: 'modules/info.html',
+				controller: "infoCtrl"
+			})
+			.state("info.jiaowu", {
+				url: '/jiaowu',
+				views: {
+					"content@info": {
+						templateUrl: 'modules/jiaowu.html'
+					}
+				}
+			})
+			.state("info.zsjz", {
+				url: '/zsjz',
+				views: {
+					"content@info": {
+						templateUrl: 'modules/zsjz.html'
+					}
+				}
+			})
+			.state("info.bkzn", {
+				url: '/bkzn',
+				views: {
+					"content@info": {
+						templateUrl: 'modules/bkzn.html'
+					}
+				}
+			})
+			.state("info.jyxw", {
+				url: '/jyxw',
+				views: {
+					"content@info": {
+						templateUrl: 'modules/jyxw.html'
+					}
+				}
+			})
+			.state("info.zyzg", {
+				url: '/zyzg',
+				views: {
+					"content@info": {
+						templateUrl: 'modules/zyzg.html'
+					}
+				}
 			});
 	}]);
 
@@ -66,7 +107,7 @@
 	}]).directive('qcFooter', [function() {
 		return {
 			restrict: 'E',
-			templateUrl: 'modules/foote.html',
+			templateUrl: 'modules/footer.html',
 			replace: true
 		}
 	}]).directive('repeatFinish', function() {
@@ -84,7 +125,6 @@
 			var url = "action.php?act=netschool";
 			$http.get(url).success(function(response) {
 				$scope.coopschools = response;
-				console.log(response);
 			});
 			$scope.renderFinish = function() {
 				$timeout(function() {
@@ -135,12 +175,11 @@
 				autoplaySpeed: 3000,
 			});
 		}])
-		.controller("summaryCtrl", ["$scope", "$stateParams", "$http", function($scope, $stateParams, $http) {
+		.controller("summaryCtrl", ["$scope", "$stateParams", "$http", function($scope, $stateParams, $http) {}])
+		.controller("infoCtrl", ["$scope", "$stateParams", "$http", "$state", function($scope, $stateParams, $http, $state) {
 			console.log($stateParams);
-			console.log($http);
-		}])
-		.controller("infoCtrl", ["$scope", "$stateParams", "$http", function($scope, $stateParams, $http) {
-			console.log($stateParams);
-			console.log($http);
+			if("" == $stateParams.id) {
+				//				$state.go('info.jiaowu');
+			}
 		}]);
 })(window.angular);

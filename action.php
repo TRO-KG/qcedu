@@ -1,24 +1,31 @@
 <?php
-	include "zz/php/db_config.php";
-	$con = mysqli_connect($dbhost, $dbuser, $dbpass);
-	$act=$_REQUEST['act'];
-	
-	if('netschool' == $act){
+include "zz/php/db_config.php";
+$con = mysqli_connect($dbhost, $dbuser, $dbpass);
+$act=$_REQUEST['act'];
+//	var_dump($_REQUEST);
+//	echo "<br />";
+//	var_dump($_POST);
+//	echo "<br />";
+//	var_dump($_GET);
+/*   HOME PAGE DATE   首页数据   */
+if($act){
+	switch($act){
+		case 'netschool';
 		$sql = "select * from coopschool";	
-	}
-	elseif('enrollment' == $act){
+		break;
+		case 'enrollment';
 		$sql = 'select * from enrollment LIMIT 5';
-	}
-	elseif("guide" == $act){
+		break;
+		case "guide";
 		$sql = 'select * from guide LIMIT 5';
-	}
-	elseif("edunews" == $act){
+		break;
+		case "edunews";
 		$sql = 'select * from edunews LIMIT 5';	
-	}
-	elseif("notice" == $act){
+		break;
+		case "notice";
 		$sql = 'select * from notices LIMIT 5';	
+		break;
 	}
-	res();
 	function res(){
 		global $sql,$con;
 		mysqli_select_db( $con, 'qcedu' );
@@ -40,4 +47,7 @@
 		}
 		echo $str=json_encode($resArr);
 	}
+	res();
+}
+//if()
 ?>

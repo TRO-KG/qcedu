@@ -3,63 +3,25 @@
 		<div class="col-xs-12 col-sm-12  col-md-9 padd0">
 			<div class="mainbox">
 				<div class="nylan">
-					<a href="#">招生简章</a>
+					<a href="#">教务通知</a>
 				</div>
 				<div class="procat clearfix">
 
-					<a href="info.asp?pathstr=45">教务通知</a>
+					<a ui-sref="info.jiaowu" ui-sref-active="current">教务通知</a>
 
-					<a href="info.asp?pathstr=315" class="current">招生简章</a>
+					<a ui-sref="info.zsjz" ui-sref-active="current">招生简章</a>
 
-					<a href="info.asp?pathstr=316">报考指南</a>
+					<a ui-sref="info.bkzn" ui-sref-active="current">报考指南</a>
 
-					<a href="info.asp?pathstr=317">教育新闻</a>
+					<a ui-sref="info.jyxw" ui-sref-active="current">教育新闻</a>
 
-					<a href="info.asp?pathstr=318">职业资格</a>
+					<a ui-sref="info.zyzg" ui-sref-active="current">职业资格</a>
 
 				</div>
 				<div class="clear"></div>
 				<div class="mainbox_2">
-					<div class="mainbox_2d">
-						<ul class="clearfix">
+					<div class="mainbox_2d" ui-view="content">
 
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=165">2017年南开大学现代远程教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=164">2017年电子科技大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=163">2017年北京科技大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=162">2017年山东大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=161">2017年天津大学现代远程教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=160">2017年四川大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=159">2017年西安交通大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=158">2017年西南大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=157">2017年西南交通大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=156">2017年中国石油大学（北京）现代远程教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=155">2017年西南科技大学网络学历教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-							<li class="clearfix">
-								<a class="float_l" href="infoview.asp?id=154">2017年春季北京大学现代远程教育招生简章</a><span class="float_r">[2017-6-29]</span></li>
-
-						</ul>
 					</div>
 					<div class="clear"></div>
 					<!--分页-->
@@ -68,10 +30,9 @@
 						<div class="sh_page">
 							<a>首页</a>&nbsp;
 							<a>上一页</a>&nbsp;
-							<a class="dangqian" href="/info.asp?pathstr=315&amp;total=14&amp;page=1">1</a>
-							<a href="/info.asp?pathstr=315&amp;total=14&amp;page=2">2</a>
-							<a href="/info.asp?pathstr=315&amp;total=14&amp;page=2">下一页</a>&nbsp;
-							<a href="/info.asp?pathstr=315&amp;total=14&amp;page=2">末页</a>
+							<a class="dangqian" href="/info.asp?pathstr=45&amp;total=3&amp;page=1">1</a>
+							<a>下一页</a>&nbsp;
+							<a>末页</a>
 						</div>
 
 					</div>
@@ -122,7 +83,7 @@
 
 			<div class="asside_box1 hidden-sm">
 				<div class="contact_box">
-					<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=936907843&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank"><img class="contactimg" src="images/contact_img.png"></a>
+					<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1007614025&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank"><img class="contactimg" src="images/contact_img.png"></a>
 					<div class="wechat">
 						<img src="images/wechat1.jpg">
 						<p>扫一扫获取报名资料</p>
@@ -130,11 +91,10 @@
 					<div class="online">
 						<p>免费通话<br> 咨询热线：
 						</p>
-						<p style="color:#f4bc35 ; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:29px;">13270871699</p>
+						<p style="color:#f4bc35 ; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:29px;">15303718943</p>
 
 						<div class="myqq">
-							<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=936907843&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank">卢老师</a>
-							<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2050841545&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank">宋老师</a>
+							<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1007614025&amp;site=www.cactussoft.cn&amp;menu=yes" target="_blank">张老师</a>
 						</div>
 					</div>
 				</div>

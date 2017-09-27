@@ -74,7 +74,7 @@
 			<div class="newsbox" ng-controller="enrollmentCtrl">
 				<div class="lan3 clearfix">
 					<p class="float_l">招生简章</p>
-					<a href="more.php" class="float_r">更多&gt;</a>
+					<a ui-sref="info" class="float_r">更多&gt;</a>
 				</div>
 				<!--S news_list-->
 				<div class="news_list">
@@ -89,13 +89,13 @@
 			<div class="newsbox" ng-controller="guideCtrl">
 				<div class="lan3 clearfix">
 					<p class="float_l">报考指南</p>
-					<a href="more.php" class="float_r">更多&gt;</a>
+					<a ui-sref="info({id:1})" class="float_r">更多&gt;</a>
 				</div>
 				<!--S news_list-->
 				<div class="news_list">
 					<ul class="clearfix">
 						<li class="clearfix" ng-repeat="item in items track by $index">
-							<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+							<a class="float_l" ui-sref="infoview({id:item.article_id})">{{item.article_title}}</a>
 						</li>
 					</ul>
 				</div>
@@ -104,13 +104,13 @@
 			<div class="newsbox" ng-controller="newCtrl">
 				<div class="lan3 clearfix">
 					<p class="float_l">教育新闻</p>
-					<a href="info.asp?pathstr=317" class="float_r">更多&gt;</a>
+					<a ui-sref="info" class="float_r">更多&gt;</a>
 				</div>
 				<!--S news_list-->
 				<div class="news_list">
 					<ul class="clearfix">
 						<li class="clearfix" ng-repeat="item in items track by $index">
-							<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+							<a class="float_l" ui-sref="infoview({id:item.article_id})">{{item.article_title}}</a>
 						</li>
 					</ul>
 				</div>
@@ -119,13 +119,13 @@
 			<div class="newsbox" ng-controller="noticeCtrl">
 				<div class="lan3 clearfix">
 					<p class="float_l">教务通知</p>
-					<a href="info.asp?pathstr=45" class="float_r">更多&gt;</a>
+					<a ui-sref="info" class="float_r">更多&gt;</a>
 				</div>
 				<!--S news_list-->
 				<div class="news_list">
 					<ul class="clearfix">
 						<li class="clearfix" ng-repeat="item in items track by $index">
-							<a class="float_l" ng-href="infoview.php?art={{item.article_id}}">{{item.article_title}}</a>
+							<a class="float_l" ui-sref="infoview({id:item.article_id})">{{item.article_title}}</a>
 						</li>
 					</ul>
 				</div>
