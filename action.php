@@ -1,5 +1,5 @@
 <?php
-include "zz/php/db_config.php";
+include "zm/db_config.php";
 $con = mysqli_connect($dbhost, $dbuser, $dbpass);
 $act=$_REQUEST['act'];
 //	var_dump($_REQUEST);
@@ -11,7 +11,7 @@ $act=$_REQUEST['act'];
 if($act){
 	switch($act){
 		case 'netschool';
-		$sql = "select * from coopschool";	
+		$sql = "select * from coopschool LIMIT 25";	
 		break;
 		case 'enrollment';
 		$sql = 'select * from enrollment LIMIT 5';

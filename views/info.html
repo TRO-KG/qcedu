@@ -1,0 +1,45 @@
+<div class="mainwrap mar_t15 padd_b50">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12  col-md-9 padd0">
+			<div class="mainbox">
+				<div class="nylan">
+					<a href="#">教务通知</a>
+				</div>
+				<div class="procat clearfix">
+
+					<a ui-sref="info.jiaowu" ui-sref-active="current">教务通知</a>
+
+					<a ui-sref="info.zsjz" ui-sref-active="current">招生简章</a>
+
+					<a ui-sref="info.bkzn" ui-sref-active="current">报考指南</a>
+
+					<a ui-sref="info.jyxw" ui-sref-active="current">教育新闻</a>
+
+					<a ui-sref="info.zyzg" ui-sref-active="current">职业资格</a>
+
+				</div>
+				<div class="clear"></div>
+				<div class="mainbox_2">
+					<div class="mainbox_2d" ui-view="content">
+
+					</div>
+					<div class="clear"></div>
+					<!--分页-->
+					<div class="sh_page text_c">
+
+						<div class="sh_page">
+							<a>首页</a>&nbsp;
+							<a>上一页</a>&nbsp;
+							<a class="dangqian" href="/info.asp?pathstr=45&amp;total=3&amp;page=1">1</a>
+							<a>下一页</a>&nbsp;
+							<a>末页</a>
+						</div>
+
+					</div>
+					<!--分页-->
+				</div>
+			</div>
+		</div>
+		<qc-outside></qc-outside>
+	</div>
+</div>

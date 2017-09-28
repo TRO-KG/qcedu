@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit" />
+		<meta name="keywords" content="启辰教育" />
+		<meta name="description" content="启辰教育" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>启辰教育_留言板</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body,h1,html,li,ul{padding:0;margin:0}
+			body{background:url(images/message-board.png) fixed 100%/100% 100% no-repeat;color:#2003fb}
+			.w1000{width:50%;margin:0 auto;background-color:rgba(140,236,235,.63)}
+			.qc-title{margin-top:16%;border-radius:10px;padding:10px}
+			.qc-title h1{font-size:28px;text-align:center;padding:5px;text-shadow:5px 5px 3px #d6b2b2;letter-spacing:22px}
+			.row{padding:5px}
+			.row div{padding-top:5px}
+			.row span{line-height:26px;text-align:center;height:26px}
+			.btn{background-color:#0193DE;color:#fff}
+			input,textarea{color: #000000;}
+		</style>
+	</head>
+	<body>
+		<section class="w1000 qc-title container">
+			<h1>你的梦想是什么？</h1>
+			<div class="row">
+				<span class="col-md-1"></span>
+				<textarea id="dream" cols="30" rows="8" class="col-md-10" placeholder="请在此输入您感兴趣的学校或专业，我们会尽快与您联系。(必填)"></textarea>
+			</div>
+			<div class="row">
+				<div class="col-md-6"><span class="col-md-4">姓名：</span><input type="text" name="username" class="col-md-7" /></div>
+				<div class="col-md-6"><span class="col-md-4">电话：</span><input type="text" name="usertel" class="col-md-7" placeholder="电话(必填)" /></div>
+			</div>
+			<div class="row">
+				<div class="col-md-6"><span class="col-md-4">QQ：</span><input type="text" name="userqq" class="col-md-7" /></div>
+				<div class="col-md-6"><span class="col-md-4">Email：</span><input type="text" name="useremail" class="col-md-7" /></div>
+			</div>
+			<div class="row">
+				<div class="col-md-6"><span class="col-md-4">地址：</span><input type="text" name="useraddress" class="col-md-7" /></div>
+			</div>
+			<div class="row">
+				<div class="col-md-12"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-6"><span class="col-md-4"></span>
+					<div class="col-md-4 btn" id="btn-sub">报名</div>
+				</div>
+				<div class="col-md-6"><span class="col-md-4"></span>
+					<div class="col-md-4 btn" id="btn-back">放弃</div>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script type="text/javascript">
+		$(function(){var back=$("#btn-back").on("click",function(){if(navigator.userAgent.indexOf("MSIE")>0){if(navigator.userAgent.indexOf("MSIE 6.0")>0){window.opener=null;window.close()}else{window.open('','_top');window.top.close()}}else if(navigator.userAgent.indexOf("Firefox")>0){window.opener=null;window.open('','_self');window.close();window.location.href='about:blank '}else{window.opener=null;window.open('','_self');window.close()}});var sub=$("#btn-sub").on("click",function(){var obj={};obj.dream=$.trim($("#dream").val());obj.username=$.trim($("[name='username']").eq(0).val());obj.usertel=$.trim($("[name='usertel']").eq(0).val());obj.userqq=$.trim($("[name='userqq']").eq(0).val());obj.useremail=$.trim($("[name='useremail']").eq(0).val());obj.useraddress=$.trim($("[name='useraddress']").eq(0).val());if(obj.dream===""){alert("亲，您还没有说出你的梦想哦！");$("#dream").focus();return}if(obj.usertel===''){alert("电话号码不能为空");return}if(!(/^1[3|5][0-9]\d{4,8}$/.test(obj.usertel))){alert("亲，若想获取及时信息，请输入正确的手机号");$("[name='usertel']").focus();return}if(obj.userqq&&!(/[0-9]/.test(obj.userqq))){alert("亲，QQ号码不应该是数字吗？");$("[name='userqq']").focus();return}$.ajax({type:"post",url:"data_handling.php?act=target_user",data:obj,success:function(){alert("提交成功，我们会尽快与您取得联系。")},error:function(e){alert("服务器繁忙，请稍后重试，给您带来的不便敬请谅解。。。")}})})});
+</script>
+</html>

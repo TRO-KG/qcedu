@@ -7,31 +7,36 @@
 		$stateProvider
 			.state("home", {
 				url: '/',
-				templateUrl: 'modules/home.html'
+				templateUrl: 'views/home.html'
 			})
 			.state("netedu", {
 				url: '/netedu',
-				templateUrl: 'modules/netedu.html'
-			})
-			.state("tvedu", {
-				url: '/tvedu',
-				templateUrl: 'modules/tvedu.html'
+				templateUrl: 'views/netedu.html'
 			})
 			.state("adultedu", {
 				url: '/adultedu',
-				templateUrl: 'modules/adultedu.html'
+				templateUrl: 'views/adultedu.html'
+			})
+			.state("tvedu", {
+				url: '/tvedu',
+				templateUrl: 'views/tvedu.html'
 			})
 			.state("selfstudy", {
 				url: '/selfstudy',
-				templateUrl: 'modules/selfstudy.html'
+				templateUrl: 'views/selfstudy.html'
 			})
 			.state("online", {
 				url: '/online',
-				templateUrl: 'modules/online.html'
+				templateUrl: 'views/online.html',
+				controller: "onlineCtrl"
 			})
 			.state("about", {
 				url: '/about',
 				templateUrl: 'modules/about.html'
+			})
+			.state("contactus", {
+				url: '/contactus',
+				templateUrl: 'modules/contactus.html'
 			})
 			.state("school", {
 				url: '/school/{id}',
@@ -45,27 +50,19 @@
 			})
 			.state("info", {
 				url: '/info',
-				templateUrl: 'modules/info.html',
+				templateUrl: 'views/info.html',
 				controller: "infoCtrl"
 			})
 			.state("info.jiaowu", {
-				url: '/jiaowu',
+				url: '/jiaowu/{id}',
 				views: {
 					"content@info": {
 						templateUrl: 'modules/jiaowu.html'
 					}
 				}
 			})
-			.state("info.jiaowu.aaa", {
-				url: '/aaa',
-				views: {
-					"content@info": {
-						templateUrl: 'modules/aaa.html'
-					}
-				}
-			})
 			.state("info.zsjz", {
-				url: '/zsjz',
+				url: '/zsjz/{id}',
 				views: {
 					"content@info": {
 						templateUrl: 'modules/zsjz.html'
@@ -73,7 +70,7 @@
 				}
 			})
 			.state("info.bkzn", {
-				url: '/bkzn',
+				url: '/bkzn/{id}',
 				views: {
 					"content@info": {
 						templateUrl: 'modules/bkzn.html'
@@ -81,7 +78,7 @@
 				}
 			})
 			.state("info.jyxw", {
-				url: '/jyxw',
+				url: '/jyxw/{id}',
 				views: {
 					"content@info": {
 						templateUrl: 'modules/jyxw.html'
@@ -89,7 +86,7 @@
 				}
 			})
 			.state("info.zyzg", {
-				url: '/zyzg',
+				url: '/zyzg/{id}',
 				views: {
 					"content@info": {
 						templateUrl: 'modules/zyzg.html'
@@ -100,40 +97,67 @@
 
 	// ********  指令   *******
 	qcedu.directive('qcHeader', [function() {
-		return {
-			restrict: 'E',
-			templateUrl: 'modules/head.html',
-			replace: true
-		}
-	}]).directive('qcAcademy', [function() {
-		return {
-			restrict: 'E',
-			templateUrl: 'modules/academy.html',
-			replace: true,
-			controller: "academyCtrl"
-		}
-	}]).directive("qcBigbanner", [function() {
-		return {
-			restrict: 'E',
-			templateUrl: 'modules/banner.html',
-			replace: true,
-			controller: "bannerCtrl"
-		}
-	}]).directive('qcFooter', [function() {
-		return {
-			restrict: 'E',
-			templateUrl: 'modules/footer.html',
-			replace: true
-		}
-	}]).directive('repeatFinish', function() {
-		return {
-			link: function(scope, element, attr) {
-				if(scope.$last == true) {
-					scope.renderFinish();
+			return {
+				restrict: 'E',
+				templateUrl: 'views/head.html',
+				replace: true
+			}
+		}])
+		.directive('qcFooter', [function() {
+			return {
+				restrict: 'E',
+				templateUrl: 'views/footer.html',
+				replace: true
+			}
+		}])
+		.directive("qcBigbanner", [function() {
+			return {
+				restrict: 'E',
+				templateUrl: 'modules/banner.html',
+				replace: true,
+				controller: "bannerCtrl"
+			}
+		}])
+		.directive('qcAcademy', [function() {
+			return {
+				restrict: 'E',
+				templateUrl: 'modules/academy.html',
+				replace: true,
+				controller: "academyCtrl"
+			}
+		}])
+		.directive("qcOutside", [function() {
+			return {
+				restrict: 'E',
+				templateUrl: 'views/outside.html',
+				replace: true
+			}
+		}])
+		.directive("qcHonor", [function() {
+			return {
+				restrict: 'E',
+				templateUrl: 'views/honor.html',
+				replace: true
+			}
+		}])
+		.directive('repeatFinish', [function() {
+			return {
+				link: function(scope, element, attr) {
+					if(scope.$last == true) {
+						scope.renderFinish();
+					}
 				}
 			}
-		}
-	});
+		}])
+		.directive("academyFinish", [function() {
+			return {
+				link: function(scope, element, attr) {
+					if(scope.$last == true) {
+						scope.renderAcademy();
+					}
+				}
+			}
+		}]);
 
 	//   *****   控制器       ******
 	qcedu.controller('schoolCtrl', function($scope, $http, $timeout) {
@@ -191,20 +215,65 @@
 			});
 		}])
 		.controller("academyCtrl", ["$scope", function($scope) {
-			$(".picScroll-top").slide({
-				ttitCell: ".hd ul",
-				mainCell: ".bd ul",
-				autoPage: true,
-				effect: "topLoop",
-				autoPlay: true,
-				vis: 2
-			});
+			$scope.renderAcademy = function() {
+				$timeout(function() {
+					$(".picScroll-top").slide({
+						ttitCell: ".hd ul",
+						mainCell: ".bd ul",
+						autoPage: true,
+						effect: "topLoop",
+						autoPlay: true,
+						vis: 2
+					});
+				}, 0);
+			};
+
 		}])
 		.controller("summaryCtrl", ["$scope", "$stateParams", "$http", function($scope, $stateParams, $http) {}])
 		.controller("infoCtrl", ["$scope", "$stateParams", "$http", "$state", function($scope, $stateParams, $http, $state) {
-			console.log($stateParams);
-			if("" == $stateParams.id) {
-				//				$state.go('info.jiaowu');
-			}
+
+		}])
+		.controller("onlineCtrl", ["$scope",function($scope) {
+			$("[type=submit]").on("click",function($scope){
+				var obj = new Object();
+					obj.uesrname = $.trim($("#txt_name2").val());
+					obj.professional = $.trim($("#txt_qq2").val());
+					obj.address = $.trim($("#txt_where2").val());
+					obj.usertel = $.trim($("#txt_tel2").val());
+					obj.usertemail = $.trim($("#txt_email2").val());
+				
+				if(obj.uesrname === ""){
+					alert("请悄悄地告诉我您的名字吧");
+					$("#txt_name2").focus();
+					return;
+				};
+				if(obj.address === ""){
+					alert("人生三大问题之一：你从哪里来？"); 
+					$("#txt_where2").focus();
+					return;
+				};
+				if(obj.usertel === ""){
+					alert("世界上最远的距离：我不知道怎么联系你。");
+					$("#txt_tel2").focus();
+					return;
+				};
+				if(!(/^1[3|5][0-9]\d{4,8}$/.test(obj.usertel))){
+					alert("亲，若想获取及时信息，请输入正确的手机号");
+					$("#txt_tel2").focus();
+					return;
+				};
+				$.ajax({
+					type:"post",
+					url:"data_handling.php?act=onlineregistration",
+					async:true,
+					data:obj,
+					success:function(res){
+						alert("报名成功，请静候佳音。");
+					},
+					error:function(err){
+						alert("服务器繁忙，请稍后重生。。。");
+					}
+				});
+			});
 		}]);
 })(window.angular);
