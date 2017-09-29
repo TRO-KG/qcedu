@@ -12,20 +12,19 @@
 
 		<div class="login-box">
 			<h1>启辰管理系统</h1>
-			<form method="post" action="">
 				<div class="name">
 					<label>管理员账号：</label>
-					<input type="text" name="" id="" tabindex="1" autocomplete="off">
+					<input type="text" name="username">
 				</div>
 				<div class="password">
 					<label>密  码：</label>
-					<input type="password" name="" maxlength="16" id="" tabindex="2">
+					<input type="password" name="password">
 				</div>
 				<div class="code">
 					<label>验证码：</label>
-					<input type="text" name="" maxlength="4" id="code" tabindex="3">
+					<input type="text" maxlength="4" id="code">
 					<div class="codeImg">
-						<img src="images/captcha.jpeg.jpg">
+						<img src="code/code.php" onclick="this.src='code/code.php?i='+Math.random()">
 					</div>
 				</div>
 				<div class="remember">
@@ -33,9 +32,8 @@
 					<label>记住密码</label>
 				</div>
 				<div class="login">
-					<button type="submit" tabindex="5">登录</button>
+					<div id="btn" class="btn">登录</div>
 				</div>
-			</form>
 		</div>
 
 		<div class="bottom">©2017 QiChenEdu
@@ -45,13 +43,13 @@
 		<div class="screenbg">
 			<ul>
 				<li style="opacity: 1; visibility: visible;">
-					<a href="javascript:;"><img src="images/0.jpg" style="width: 1349px;"></a>
+					<a href="javascript:;"><img src="images/0.jpg"></a>
 				</li>
 				<li style="opacity: 0; visibility: visible;">
-					<a href="javascript:;"><img src="images/1.jpg" style="width: 1349px;"></a>
+					<a href="javascript:;"><img src="images/1.jpg"></a>
 				</li>
 				<li style="opacity: 0; visibility: visible;">
-					<a href="javascript:;"><img src="images/2.jpg" style="width: 1349px;"></a>
+					<a href="javascript:;"><img src="images/2.jpg"></a>
 				</li>
 			</ul>
 		</div>
@@ -59,6 +57,34 @@
 	</body>
 	<script type="text/javascript">
 		$(function() {
+			var localuser = localStorage.getItem("user");
+			if(localuser){
+				var user = JSON.parse(localuser);
+				$("[name=username]").val(user.user);
+				$("[name=password]").val(user.pwd);
+				$("#remember").attr("checked",true);
+			}
+			$("#btn").on("click",function(e){
+				var obj = {};
+					obj.user =$.trim($("[name=username]").val());
+					obj.pwd =$("[name=password]").val();
+					obj.code =$("#code").val();
+					obj.remember =$("#remember").is(':checked');
+					obj.codetime = (new Date()).getTime();
+					if(obj.remember){
+						localStorage.setItem("user",JSON.stringify(obj));
+					}else{
+						localStorage.removeItem("user");
+					}
+			})
+			
+			
+			
+			
+			
+			
+			
+			
 			$(".screenbg ul li").each(function() {
 				$(this).css("opacity", "0");
 			});
