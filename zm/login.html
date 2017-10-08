@@ -24,7 +24,7 @@
 					<label>验证码：</label>
 					<input type="text" maxlength="4" id="code">
 					<div class="codeImg">
-						<img src="code/code.php" onclick="this.src='code/code.php?i='+Math.random()">
+						<img src="getverify.php" onclick="this.src='getverify.php?i='+Math.random()">
 					</div>
 				</div>
 				<div class="remember">
@@ -70,12 +70,12 @@
 					obj.pwd =$("[name=password]").val();
 					obj.code =$("#code").val();
 					obj.remember =$("#remember").is(':checked');
-					obj.codetime = (new Date()).getTime();
 					if(obj.remember){
 						localStorage.setItem("user",JSON.stringify(obj));
 					}else{
 						localStorage.removeItem("user");
 					}
+					
 			})
 			
 			
