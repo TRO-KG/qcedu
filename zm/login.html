@@ -57,25 +57,40 @@
 	</body>
 	<script type="text/javascript">
 		$(function() {
-			var localuser = localStorage.getItem("user");
-			if(localuser){
-				var user = JSON.parse(localuser);
-				$("[name=username]").val(user.user);
-				$("[name=password]").val(user.pwd);
-				$("#remember").attr("checked",true);
-			}
+//			var localuser = localStorage.getItem("user");
+//			if(localuser){
+//				var user = JSON.parse(localuser);
+//				$("[name=username]").val(user.user);
+//				$("[name=password]").val(user.pwd);
+//				$("#remember").attr("checked",true);
+//			}
 			$("#btn").on("click",function(e){
 				var obj = {};
 					obj.user =$.trim($("[name=username]").val());
 					obj.pwd =$("[name=password]").val();
 					obj.code =$("#code").val();
-					obj.remember =$("#remember").is(':checked');
-					if(obj.remember){
-						localStorage.setItem("user",JSON.stringify(obj));
-					}else{
-						localStorage.removeItem("user");
-					}
-					
+//					obj.remember =$("#remember").is(':checked');
+//					if(obj.remember){
+//						localStorage.setItem("user",JSON.stringify(obj));
+//					}else{
+//						localStorage.removeItem("user");
+//					}
+				if($.trim(obj.user)&&$.trim(obj.pwd)&&$.trim(obj.code)){
+					$.ajax({
+						type:"post",
+						url:"dologin.php",
+						async:true,
+						data:obj,
+						success:function(res){
+							$("body").append(res);
+							console.log(res);
+						}
+					});
+				}else{
+					alert("a");
+				}
+				
+				
 			})
 			
 			

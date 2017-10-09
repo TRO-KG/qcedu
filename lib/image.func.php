@@ -9,7 +9,7 @@ function verifyImage($type = 1,$length = 4,$pixel = 0,$line = 0,$sess_name = "ve
 	$white = ImageColorAllocate($im, 255, 255, 255);
 	$chars = buildRandomString($type, $length);
 	$_SESSION[$sess_name]=$chars;
-	$fontfiles  = ["t1.ttf","t2.ttf","t6.ttf","t7.ttf","t10.ttf"];
+	$fontfiles  = array("t1.ttf","t2.ttf","t6.ttf","t7.ttf","t10.ttf");
 	
 	imagefill($im, 0, 0,$bg);
 
@@ -41,4 +41,3 @@ function verifyImage($type = 1,$length = 4,$pixel = 0,$line = 0,$sess_name = "ve
 	ImagePNG($im);
 	ImageDestroy($im);
 }
-verifyImage();
