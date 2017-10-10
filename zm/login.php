@@ -29,8 +29,8 @@
 					</div>
 				</div>
 				<div class="remember">
-					<input type="checkbox" name="remember" id="remember" tabindex="4">
-					<label>记住密码</label>
+					<input type="checkbox" name="remember" id="remember" value="1">
+					<label>记住密码(一周内自动登陆)</label>
 				</div>
 				<div class="login">
 					<button id="btn" class="btn">登录</button>

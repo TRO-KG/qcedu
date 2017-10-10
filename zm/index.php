@@ -3,7 +3,7 @@
 	checkLogined();
 ?>
 <!DOCTYPE html>
-<html lang="zh" ng-app="admin">
+<html lang="zh">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="container-fluid">
@@ -29,28 +27,48 @@
 		<div class="headtool clearfix">
 			<ul class="tool pull-right">
 				<li>
-					<div class="wec">
-						<h3>欢迎您<a class="adm" href="#"><?php echo $_SESSION["admin"]["username"]; ?></a></h3>
+					<div>
+						<a class="adm" href="#"><span>欢迎您：</span><?php echo $_SESSION["admin"]["username"]; ?></a>
 					</div>
 				</li>
-				<li><h3><i class="icon-arrow-left"></i>&nbsp;首页</h3></li>
-				<li><h3>后退</h3></li>
-				<li><h3>前进</h3></li>
-				<li><h3>刷新</h3></li>
-				<li><h3><a href="doadminaction.php?act=logout">退出</a></h3></li>
+				<li>
+					<div>
+						<a href="#"><i class="icon-arrow-left"></i>&nbsp;首页</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#">后退</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="#">前进</a>
+					</div>	
+				</li>
+				<li>
+					<div>
+						<a href="#">刷新</a>
+					</div>
+				</li>
+				<li>
+					<div>
+						<a href="doadminaction.php?act=logout">退出</a>	
+					</div>
+				</li>
 			</ul>
 		</div>
 	</header>
 	<section class="row contitle">
-		<div class="admtitle col-xs-3">
+		<div class="admtitle col-xs-2">
 			管理列表
 		</div>
-		<div class="admcont col-xs-9">
+		<div class="admcont col-xs-10">
 			管理页面
 		</div>
 	</section>
 	<section class="row contbox clearfix">
-		<nav class="admlist col-xs-pull-3">
+		<nav class="admlist col-xs-2">
 			<ul>
 				<li>管理员管理</li>
 				<li>文章管理</li>
@@ -59,7 +77,8 @@
 				<li>留言管理</li>
 			</ul>
 		</nav>
-		<div class="admpage col-xs-pull-9" ui-view>
+		<div class="admpage col-xs-10">
+			<?php include_once 'modules/sys.html'; ?>
 		</div>
 	</section>
 </body>
