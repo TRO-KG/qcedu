@@ -1,0 +1,21 @@
+/*   全局样式     */
+html,body,ul,li,h1,h2,h3{padding: 0;margin: 0;}
+ul,li{list-style: none;}
+a{text-decoration:none;}
+.container-fluid{padding:0;}
+
+/*header{}*/
+header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px;}
+.title h1{height: 78px;line-height: 78px;font-size: 28px;}
+
+.headtool{background-color: #988b8b;}
+.tool{padding-right: 20px;}
+.tool li{float: left;padding: 0 5px;margin: 0 15px;}
+.tool h3{height: 30px; line-height: 30px;}
+.tool h3,.tool a{color: #55d8c1;font-size: 16px;}
+.contitle div{height: 30px;line-height: 30px;background-color: #c7bfbf;font-size: 16px;font-weight: 800;}
+.admtitle,.admlist{text-align: center;}
+.admcont{border-left: 1px solid brown;}
+.admlist{background-color: #000000;color: #fff; display: inline-block;min-height: 500px;}
+.admlist ul{margin-top: 14px;}
+.admlist li {height: 30px;line-height: 30px;font-size: 16px;}

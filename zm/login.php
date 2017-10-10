@@ -12,6 +12,7 @@
 
 		<div class="login-box">
 			<h1>启辰管理系统</h1>
+			<form action="dologin.php" method="post">
 				<div class="name">
 					<label>管理员账号：</label>
 					<input type="text" name="username">
@@ -22,22 +23,24 @@
 				</div>
 				<div class="code">
 					<label>验证码：</label>
-					<input type="text" maxlength="4" id="code">
+					<input type="text" name="verify" maxlength="4" id="code">
 					<div class="codeImg">
 						<img src="getverify.php" onclick="this.src='getverify.php?i='+Math.random()">
 					</div>
 				</div>
 				<div class="remember">
-					<input type="checkbox" id="remember" tabindex="4">
+					<input type="checkbox" name="remember" id="remember" tabindex="4">
 					<label>记住密码</label>
 				</div>
 				<div class="login">
-					<div id="btn" class="btn">登录</div>
+					<button id="btn" class="btn">登录</button>
 				</div>
+			</form>
+				
 		</div>
 
 		<div class="bottom">©2017 QiChenEdu
-			<a href="javascript:;" target="_blank">启辰教育</a>
+			<a href="../in.html" target="_blank">启辰教育</a>
 		</div>
 
 		<div class="screenbg">
@@ -57,49 +60,6 @@
 	</body>
 	<script type="text/javascript">
 		$(function() {
-//			var localuser = localStorage.getItem("user");
-//			if(localuser){
-//				var user = JSON.parse(localuser);
-//				$("[name=username]").val(user.user);
-//				$("[name=password]").val(user.pwd);
-//				$("#remember").attr("checked",true);
-//			}
-			$("#btn").on("click",function(e){
-				var obj = {};
-					obj.user =$.trim($("[name=username]").val());
-					obj.pwd =$("[name=password]").val();
-					obj.code =$("#code").val();
-//					obj.remember =$("#remember").is(':checked');
-//					if(obj.remember){
-//						localStorage.setItem("user",JSON.stringify(obj));
-//					}else{
-//						localStorage.removeItem("user");
-//					}
-				if($.trim(obj.user)&&$.trim(obj.pwd)&&$.trim(obj.code)){
-					$.ajax({
-						type:"post",
-						url:"dologin.php",
-						async:true,
-						data:obj,
-						success:function(res){
-							$("body").append(res);
-							console.log(res);
-						}
-					});
-				}else{
-					alert("a");
-				}
-				
-				
-			})
-			
-			
-			
-			
-			
-			
-			
-			
 			$(".screenbg ul li").each(function() {
 				$(this).css("opacity", "0");
 			});

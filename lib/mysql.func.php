@@ -1,12 +1,59 @@
 <?php
+class mysql{
+	private static $dbcon=false;
+    private $link;
+	private function __construct(){
+        //连接数据库
+        $this->db_connect();
+    }
+	//连接数据库
+	private function db_connect(){
+        $this->link=mysqli_connect(DB_HOST,DB_USER,DB_PWD);
+        if(!$this->link){
+            echo "数据库连接失败<br>";
+            echo "错误编码".mysqli_errno($this->link)."<br>";
+            echo "错误信息".mysqli_error($this->link)."<br>";
+            exit;
+        }
+        mysqli_set_charset($this->link,DB_CHARSET);
+        mysqli_select_db($this->link,DB_DBNAME) or die("指定数据库打开失败");
+    }
+    //公用的静态方法
+    public static function getIntance(){
+        if(self::$dbcon==false){
+            self::$dbcon=new self;
+        }
+        return self::$dbcon;
+    }
+	//执行sql语句的方法
+	public function query($sql){
+        $res=mysqli_query($this->link,$sql);
+        if(!$res){
+            echo "sql语句执行失败<br>";
+            echo "错误编码是".mysqli_errno($this->link)."<br>";
+            echo "错误信息是".mysqli_error($this->link)."<br>";
+        }
+        return $res;
+    }
+	 //获得最后一条记录id
+	public function getInsertid(){
+        return mysqli_insert_id($this->link);
+    }
+	/**
+     * 查询某个字段
+     */
+    public function getOne($sql, $result_type = MYSQL_ASSOC){
+        $result=$this->query($sql);
+        return mysqli_fetch_assoc($result);
+    }
+}
 /*
  * 连接数据库
  * */
 function connect(){
-	$conn = mysql_connect(DB_HOST,DB_USER,DB_PWD) or die("数据库连接失败 Error:".mysql_errno().":".mysql_error());
-	mysql_set_charset(DB_CHARSET);
-	mysql_select_db(DB_DBNAME) or die("指定数据库打开失败");
-	return $conn;
+	$con = mysqli_connect(DB_HOST,DB_USER,DB_PWD) or die("数据库连接失败 Error:".mysqli_connect_errno().":".mysqli_connect_error());
+	mysqli_set_charset($con,DB_CHARSET);
+	mysqli_select_db($con,DB_DBNAME) or die("指定数据库打开失败");
 }
 /*
  * 插入数据
@@ -49,8 +96,8 @@ function delete($table,$where=null){
  * */
 
 function fetchOne($sql, $result_type = MYSQL_ASSOC){
- 	$result = mysql_query($sql);
-	$row = mysql_fetch_array($result,$result_type);
+   	$result = mysqli_query($sql );
+	$row = mysqli_fetch_array($result, $result_type);
 	return $row;
 }
 
