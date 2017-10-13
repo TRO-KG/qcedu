@@ -11,22 +11,11 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 .headtool{background-color: #988b8b;}
 .tool{padding-right: 20px;}
 .tool li{float: left;padding: 0 5px;margin: 0 15px;}
-.tool div{height: 30px; line-height: 30px;}
-.tool a{color: #55d8c1;font-size: 16px;}
+.tool h3{height: 30px; line-height: 30px;}
+.tool h3,.tool a{color: #55d8c1;font-size: 16px;}
 .contitle div{height: 30px;line-height: 30px;background-color: #c7bfbf;font-size: 16px;font-weight: 800;}
 .admtitle,.admlist{text-align: center;}
 .admcont{border-left: 1px solid brown;}
 .admlist{background-color: #000000;color: #fff; display: inline-block;min-height: 500px;}
 .admlist ul{margin-top: 14px;}
 .admlist li {height: 30px;line-height: 30px;font-size: 16px;}
-
-
-/* sys CSS */
-.systitle h3{font-size: 18px;margin-top: 20px;color: #000;font-weight: bold;}
-.systable{width: 70%;margin: 0 auto;}
-.sysmsg{margin-top: 20px;}
-.systable div{border-top:1px solid #000;background-color: #d8d3d3;height: 30px;line-height: 30px;border-left:1px solid #000 ;}
-.systable>div:nth-child(1){font-size: 16px; font-weight: bold;}
-.systable>div:nth-last-child(1){border-right:1px solid #000;}
-.borbtm {border-bottom: 1px solid #000;}
-/*.systitle*/ 
