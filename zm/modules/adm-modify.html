@@ -1,0 +1,49 @@
+<div class="row-fluid">
+	<div class="bb-alert alert alert-info" style="display: none;">
+		<span>操作成功</span>
+	</div>
+	<!-- START 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
+
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#home" data-toggle="tab">请修改账号资料</a>
+			</li>
+		</ul>
+
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane active in" id="home">
+
+				<form id="tab" method="post" action="" autocomplete="off">
+
+					<label>登录名 <span class="label label-info">不可修改</span></label>
+					<input type="text" name="user_name" value="admin" class="input-xlarge" readonly="true">
+					<label>密码 <span class="label label-important">如不修改请留空</span></label>
+					<input type="password" name="password" value="" class="input-xlarge">
+					<label>姓名</label>
+					<input type="text" name="real_name" value="SomewhereYu" class="input-xlarge" required="true">
+					<label>手机</label>
+					<input type="text" name="mobile" value="13737119664" class="input-xlarge" required="" pattern="\d{11}">
+					<label>邮件</label>
+					<input type="email" name="email" value="admin@osadmin.org" class="input-xlarge" required="true">
+					<label>描述</label>
+					<textarea name="user_desc" rows="3" class="input-xlarge">初始的超级管理员!</textarea>
+					<label>账号组</label>
+
+					<select name="user_group" class="input-xlarge" id="DropDownTimezone" disabled="true">
+						<option value="1" selected="selected" class="input-xlarge option" id="DropDownTimezone-0">超级管理员组</option>
+						<option value="10" class="input-xlarge option" id="DropDownTimezone-1">aa</option>
+						<option value="11" class="input-xlarge option" id="DropDownTimezone-2">1</option>
+					</select>
+
+					<div class="btn-toolbar">
+						<button type="submit" class="btn btn-primary"><strong>提交</strong></button>
+						<div class="btn-group"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- END 以下内容不需更改，请保证该TPL页内的标签匹配即可 -->
+
+</div>
