@@ -96,21 +96,7 @@
 	}]);
 
 	// ********  指令   *******
-	qcedu.directive('qcHeader', [function() {
-			return {
-				restrict: 'E',
-				templateUrl: 'views/head.html',
-				replace: true
-			}
-		}])
-		.directive('qcFooter', [function() {
-			return {
-				restrict: 'E',
-				templateUrl: 'views/footer.html',
-				replace: true
-			}
-		}])
-		.directive("qcBigbanner", [function() {
+	qcedu.directive("qcBigbanner", [function() {
 			return {
 				restrict: 'E',
 				templateUrl: 'modules/banner.html',

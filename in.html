@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh" ng-app="qcedu">
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,15 +20,158 @@
 		<script src="js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.SuperSlide.2.1.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>	
+		<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body id="wrapper">
-		<div class="mm-page mm-slideout" id="mm-0">
-			<qc-header></qc-header>
-			<qc-bigbanner></qc-bigbanner>
-			<section ui-view></section>
-			<qc-footer></qc-footer>
+		<div id="header">
+			<div id="top" class="hidden-xs">
+				<div class="mainwrap clearfix">
+					<div class="row top">
+						<div class="col-sm-3">
+							<span class="float_l">你好，欢迎来到启辰教育！</span>
+						</div>
+						<div class="col-sm-9">
+							<div class="menu float_r">
+								<a href="message-board.html" target="_blank">高起专</a>
+								<a href="message-board.html" target="_blank">专升本</a>
+								<a href="message-board.html" target="_blank">高起本</a>
+								<a ui-sref="online">在线报名</a>
+								<a ui-sref="contactus">联系我们</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mainwrap head clearfix">
+				<div class="logo float_l">
+					<a href="#"><img src="images/logo.png" /></a>
+				</div>
+				<div class="tel float_r hidden-xs">
+					<a>153-0371-8943</a>
+					<p>全国服务咨询热线：</p>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<!--S nav-->
+			<div class="navbar hidden-xs ">
+				<ul class="mainwrap nav">
+					<li class="m">
+						<h3><a ui-sref="home" ui-sref-active="current">启辰首页</a></h3>
+					</li>
+					<li class="m">
+						<h3><a ui-sref="netedu" ui-sref-active="current">网络教育</a></h3>
+					</li>
+					<li class="m">
+						<h3><a ui-sref="adultedu" ui-sref-active="current">成人教育</a></h3>
+					</li>
+					<li class="m">
+						<h3><a ui-sref="tvedu" ui-sref-active="current">电大开放</a></h3>
+					</li>
+
+					<li class="m">
+						<h3><a ui-sref="selfstudy" ui-sref-active="current">自学考试</a></h3>
+					</li>
+					<li class="m">
+						<h3><a ui-sref="info.jiaowu" ui-sref-active="current">教务通知</a></h3>
+					</li>
+					<li class="m">
+						<h3><a ui-sref="online" ui-sref-active="current">在线报名 </a></h3>
+					</li>
+					<li class="m">
+						<h3><a ui-sref="about" ui-sref-active="current">关于我们</a></h3>
+					</li>
+				</ul>
+				<script type="text/javascript">
+					jQuery(".nav").slide({
+						type: "menu",
+						titCell: ".m",
+						targetCell: ".sub",
+						effect: "slideDown",
+						delayTime: 300,
+						triggerTime: 0,
+						returnDefault: true
+					});
+				</script>
+			</div>
+			<!--E nav-->
+			<a href="#mmenu" class="phone-nav hidden visible-xs">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
 		</div>
+		<qc-bigbanner></qc-bigbanner>
+		<section ui-view></section>
+		<footer>
+			<div class="linkwrap hidden-xs">
+				<div class="mainwrap link">
+					<h3>友情链接</h3>
+					<ul>
+
+						<li>
+							<a href="https://my.chsi.com.cn/archive/index.jsp" target="_blank">学籍查询</a>
+						</li>
+
+						<li>
+							<a href="http://www.chsi.com.cn/xlcx/index.jsp" target="_blank">学历查询</a>
+						</li>
+
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="mainwrap footer ">
+					<p align="left">
+						<br />
+					</p>
+					<p>&nbsp;</p>
+					<table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+							<tr>
+								<td style="text-align:left;vertical-align:top;">
+									<a href="#" target="_blank"><span style="color:#FFFFFF;">途帆首页</span>
+										<a href="#" target="_blank"></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span>
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">教务通知</span><span></span></a><span style="color:#FFFFFF;">&nbsp;</span><br />
+										<span style="color:#FFFFFF;"> 网</span>
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">络教育</span></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span>
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">在线报名</span></a><br />
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">成人教育</span></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span>
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">关于我们</span></a><br />
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">电大开放</span></a><span style="color:#FFFFFF;">&nbsp;&nbsp;&nbsp; </span>
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">咨询老师</span></a><br />
+										<a href="#" target="_blank"><span style="color:#FFFFFF;">自学考试</span><br />
+										</a>
+								</td>
+								<td style="text-align:left;vertical-align:top;">
+									<p align="left">
+										<span style="color:#FFFFFF;">&nbsp;</span><span style="color:#FFFFFF;">联系我们：</span><br />
+										<span style="color:#FFFFFF;">QQ1：</span><span style="color:#FFFFFF;">1007614025 张老师</span><br />
+										<span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">手机：15303718943（微信同号）</span>
+										<p align="left">
+											<span style="color:#FFFFFF;">中心地址：郑州市二七区大学南路和中秋路交叉口</span>
+										</p>
+										<p>
+											<br />
+										</p>
+								</td>
+								<td style="text-align:left;vertical-align:top;">
+									<span style="color:#FFFFFF;">手机扫一扫：</span><br />
+									<img style="width:114px;height:108px;" alt="" align="left" src="../images/wechat1.jpg" width="160" height="149" />
+								</td>
+								<td>
+									&nbsp;
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+						<br />
+					</p>
+				</div>
+			</div>
+		</footer>
 	</body>
+
 </html>
