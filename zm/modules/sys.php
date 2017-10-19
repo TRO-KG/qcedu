@@ -1,3 +1,4 @@
+<?php include_once "../../include.php"; ?>
 <div class="row">
 	<div class="col-xs-12 systitle row">
 		<h3 class="text-center">系统信息</h3>
@@ -5,6 +6,10 @@
 			<div class="row systable">
 				<div class="col-xs-3 text-center">操作系统</div>
 				<div class="col-xs-9"><?PHP echo PHP_OS; ?></div>
+			</div>
+			<div class="row systable">
+				<div class="col-xs-3 text-center">当前IP地址</div>
+				<div class="col-xs-9"><?PHP echo $_SERVER["REMOTE_ADDR"]; ?></div>
 			</div>
 			<div class="row systable">
 				<div class="col-xs-3 text-center">Apache版本</div>
