@@ -56,8 +56,8 @@ function fetchOne($sql, $result_type = MYSQL_ASSOC){
         while($row = $result->fetch_assoc()) {
             return $row;
         }
-    } else {
-        echo "0 个结果";
+    }else{
+    	alertMsg("请检查管理员账号或密码！！","login.php");
     }
 }
 

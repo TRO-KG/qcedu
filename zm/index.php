@@ -32,7 +32,15 @@ checkLogined();
 		<div class="headtool clearfix">
 			<ul class="tool pull-right">
 				<li>
-					<a class="adm" href="#"><span>欢迎您：</span><?php echo $_SESSION["admin"]["username"]; ?></a>
+					<a class="adm" href="#"><span>欢迎您：</span>
+						<?php 
+							if(isset($_SESSION["adminName"])){
+								echo $_SESSION["adminName"]; 
+							}elseif(isset($_COOKIE["adminName"])){
+								echo $_COOKIE["adminName"]; 
+							}	
+						?>		
+					</a>
 				</li>
 				<li>
 					<a href="#"><i class="fa fa-home"></i>&nbsp;首页</a>	

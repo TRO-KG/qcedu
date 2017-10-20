@@ -12,7 +12,7 @@
 
 		<div class="login-box">
 			<h1>启辰管理系统</h1>
-			<form action="dologin.php" method="post">
+			<form action="doadminaction.php?act=login" method="post">
 				<div class="name">
 					<label>管理员账号：</label>
 					<input type="text" name="username">
