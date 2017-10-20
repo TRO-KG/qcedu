@@ -1,4 +1,7 @@
 <?php
+function checkAdmin($sql){
+	return fetchOne($sql);
+}
 function checkLogined(){
 	if($_SESSION["admin"]["id"]==""&&$_COOKIE["adminId"]==""){
 		header("location:login.php");
