@@ -11,13 +11,13 @@ function connect(){
 /*
  * 插入数据
  * */
-function insert($table,$arry){
+function insert($table,$array){
 	$con = connect();
  	$keys = join(",", array_keys($array));
 	$vals = "'".join("','", array_values($array))."'";
-	$sql = "insert {$table}($keys) values({$vals})";
+	$sql = "insert into {$table} ($keys) values ({$vals})";
 	mysqli_query($con,$sql);
-	return mysql_insert_id();
+	return mysqli_insert_id($con);
 }
 /*
  * 更新数据

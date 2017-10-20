@@ -40,10 +40,14 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 
 /*  addadm  css  */
 .addadm{border: 1px solid #ddd;padding:20px;}
+.addmsg p{letter-spacing:6px;margin-top:5px;margin-bottom:5px;font-size:18px;}
+.addmsg p a{letter-spacing: 4px;font-size: 14px;}
 .add-adm-from{margin-top: 30px;}
-.add-adm-from .inputbox{height: 40px;line-height: 40px;}
-.add-adm-from input,.add-adm-from span{height: 24px;line-height: 24px;}
-.add-adm-from span{text-align: right;}
+.inputbox{margin-bottom: 20px;}
+.inputbox span{color: #f00;}
+.inputbox i{font-size: 12px;}
+.add-adm-from input,.add-adm-from label{height: 24px;line-height: 24px;}
+.add-adm-from label{text-align: right;}
 .add-adm-from textarea{line-height: 18px;height: 80px;}
 .add-adm-from .btnbox{margin-top: 20px;}
 

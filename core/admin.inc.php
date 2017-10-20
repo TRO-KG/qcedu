@@ -24,3 +24,7 @@ function logout(){
 	session_destroy();
 	header("location:login.php");
 }
+//添加管理员
+function addadm($table, $array){
+	return insert($table,$array);
+}

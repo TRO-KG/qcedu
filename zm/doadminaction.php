@@ -30,3 +30,13 @@ elseif("login" == $act){
 		alertMsg('验证码错误',"login.php");
 	}
 }
+elseif("addadm" == $act){
+	$table = "qc_admin";
+	$arr = $_POST;
+	$arr["password"] = md5($_POST["password"]);
+	$row = addadm($table, $arr);
+	echo $row;
+}
+else{
+	echo $_POST;
+}
