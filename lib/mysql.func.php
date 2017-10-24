@@ -66,10 +66,11 @@ function fetchOne($sql, $result_type = MYSQL_ASSOC){
  * （查找所有数据）
  * */
 function fetchAll($sql, $result_type = MYSQL_ASSOC){
-	$result = mysql_query($sql);
-	while (@$row = mysql_fetch_array($result,$result_type)) {
-		$rows[] = $row;
-	}
+	$con = connect();
+	$result = mysqli_query($con,$sql);
+	while($row = $result->fetch_assoc()) {
+            $rows[]=$row;
+        }
 	return $rows;
 }
 
@@ -77,6 +78,7 @@ function fetchAll($sql, $result_type = MYSQL_ASSOC){
  *查找数据条数 
  * */
 function getResultNum($sql){
-	$result = mysql_query($sql);
-	return mysql_num_rows($result);
+	$con = connect();
+	$result = mysqli_query($con,$sql);
+	return mysqli_num_rows($result);
 }
