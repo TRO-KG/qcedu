@@ -14,3 +14,22 @@ CREATE TABLE `qc_admin`(
 PRIMARY KEY ( id ),
 UNIQUE KEY `account` (`account`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--创建合作院校数据表
+DROP TABLE IF EXISTS `qc_cooperate`;
+CREATE TABLE `qc_cooperate`(
+`id` tinyint unsigned AUTO_INCREMENT,
+`name` varchar(20) NOT NULL,
+`logo` varchar(50),
+`synopsis` varchar(500),
+`zsdx` varchar(200),
+`bmtj` varchar(200),
+`bmff` varchar(200),
+`zscc` varchar(200),
+`lqff` varchar(200),
+`xxfs` varchar(200),
+`rxks` varchar(200),
+`zsbf` varchar(200),
+`submission_date` TIMESTAMP,
+PRIMARY KEY ( id ),
+UNIQUE KEY `name` (`name`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
