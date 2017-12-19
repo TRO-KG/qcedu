@@ -30,6 +30,13 @@ elseif("login" == $act){
 		alertMsg('验证码错误',"login.php");
 	}
 }
+elseif("listaccount" == $act){
+	$table    = "qc_admin";
+	$pageSize = $_POST['pageSize'];
+	$page     = $_POST['page'];
+	$res      = pageFun($table,$pageSize,$page);
+	echo $res;
+}
 elseif("addadm" == $act){
 	$table = "qc_admin";
 	$arr = $_POST;
@@ -37,6 +44,28 @@ elseif("addadm" == $act){
 	$row = addadm($table, $arr);
 	echo $row;
 }
+elseif("modifyadm" == $act){
+	$id = $_POST["id"];
+	$sql = "SELECT * FROM `qc_admin` WHERE id = {$id}";
+	$row = json_encode(checkAdmin($sql));
+	echo $row;
+}
+//elseif("addCooperate" == $act){
+//	$table = "qc_cooperate";
+//	$arr = $_POST;
+//	$row = addadm($table, $arr);
+//	echo $row;
+//}
 else{
+	echo $_REQUEST;
+	echo "<br />";
+	var_dump($_REQUEST);
+	echo "<br />";
 	echo $_POST;
+	echo "<br />";
+	print_r($_POST);
+	echo "<br />";
+	var_dump($_POST);
+	echo "<br />";
+	print_r($_FILES);
 }

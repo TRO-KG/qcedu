@@ -1,6 +1,6 @@
 <?php
 require_once "../include.php";
-checkLogined();
+//checkLogined();
 ?>
 <!DOCTYPE html>
 <html lang="zh" ng-app="adm">
@@ -13,10 +13,12 @@ checkLogined();
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	
 	<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/ng-file-upload.min.js"></script>
+    <script src="../../js/ng-file-upload-shim.min.js"></script>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="container-fluid w1200">
@@ -65,19 +67,19 @@ checkLogined();
 			<h3 class="admtitle">管理列表</h3>
 			<ul class="admmenu">
 				<li>
-					管理员管理
+					<a ui-sref="homepage">首页管理</a>
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
-					文章管理
+					<a ui-sref="accountlist">管理员管理</a>
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
-					合作院校
+					<a ui-sref="articles">文章管理</a>
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
-					首页图片
+					<a ui-sref="cooperate">合作院校</a>
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
@@ -85,14 +87,7 @@ checkLogined();
 					<i class="fa fa-angle-right"></i>
 				</li>
 			</ul>
-			<ul class="admlist pull-right">
-				<li>
-					<a ui-sref="accountlist" ui-sref-active="current">账号列表</a>
-				</li>
-				<li>
-					<a ui-sref="addadm" ui-sref-active="current">添加管理员</a>
-				</li>
-			</ul>
+			<div class="admlist pull-right" ui-view="menu"></div>
 		</div>
 		<div class="adm-right col-xs-10">
 			<h3 class="admtitle">管理页面</h3>
@@ -106,7 +101,7 @@ checkLogined();
 					账号列表
 				</li>
 			</ul>
-			<div class="content clearfix" ui-view>
+			<div class="content clearfix" ui-view="content">
 			</div>
 		</div>
 	</section>
@@ -119,9 +114,6 @@ checkLogined();
 		</a>
 		<a href="#">启辰教育</a>
 	</p>
-<!--
-			<script src="http://s95.cnzz.com/z_stat.php?id=1258984548&amp;web_id=1258984548" language="JavaScript"></script>
-			<script src="http://c.cnzz.com/core.php?web_id=1258984548&amp;t=z" charset="utf-8" type="text/javascript"></script>-->
 </footer>
 </body>
 </html>

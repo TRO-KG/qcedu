@@ -14,9 +14,9 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 /*  adm  */
 .adm-left{background-color: #000;border-right: 1px solid #aec8e0;text-align: center;}
 .admtitle{background-color: #b7b3b3;font-size: 20px;font-weight: 400;height: 30px;line-height: 30px;}
-.adm-left,.adm-right{padding: 0;}
+.adm-left,.adm-right{padding:0;}
 .adm-right>h3{padding-left:15px;}
-.admmenu,.admlist{color: #fff;font-size: 16px;padding-top: 15px;padding-bottom: 15px;min-height: 520px;display: inline-block;width: 49%;vertical-align:bottom;}
+.admmenu,.admlist{color:#fff;font-size:16px;padding-top:15px;padding-bottom:15px;min-height:520px;display: inline-block;width:49%;vertical-align:bottom;}
 .admmenu li{padding-right: 6px;}
 .admmenu li,.admlist li{height: 30px;line-height: 30px;}
 .admmenu li i{float: right;margin-top: 6px;}
@@ -37,6 +37,8 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 .btn-toolbar{margin-left: 10px;}
 .adm-table-box{border: 1px #c5bfbf solid;margin-top: 10px;}
 .amd-table-title{color: #505050;background: #dddddd;background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dddddd), color-stop(1, #fafafa));background: -ms-linear-gradient(bottom, #dddddd, #fafafa);background: -moz-linear-gradient(center bottom, #dddddd 0%, #fafafa 100%);background: -o-linear-gradient(bottom, #dddddd, #fafafa);filter: -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa',EndColorStr='#dddddd')";padding-left: 1em;border-top: 1px solid #fff;outline: none;border-bottom: 1px solid #a6a6a6;border-left: none;margin-bottom: 0px;text-shadow: none;text-transform: none;font-weight: bold;font-size: .85em;line-height: 3em;}
+.adm-list-infomsg{padding-left: 0;margin: 20px 0;border-radius: 4px;color: #57575a;height: 34px;line-height: 34px;font-size: 16px;}
+.adm-table-form{display: inline-block;}
 
 /*  addadm  css  */
 .addadm{border: 1px solid #ddd;padding:20px;}
@@ -51,8 +53,17 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 .add-adm-from textarea{line-height: 18px;height: 80px;}
 .add-adm-from .btnbox{margin-top: 20px;}
 
-
-
+/*  modify-adm  css */
+.modify-adm form>div{margin-bottom: 20px;}
+.modify-adm .pop{height: 150px;left:48%;position:fixed;top:36%;width: 300px;}
+.modify-adm .pop {text-align: center;}
+.modify-adm .btn-box{margin-top: 50px;}
+/* add-add-cooperate  CSS*/
+#add-cooperate span{height: 26px;line-height: 26px;font-weight: 800;color: #000;}
+#add-cooperate>div{padding: 10px 0;}
+#add-cooperate div[contenteditable="true"]{padding: 2px; outline: 0; border: 1px solid #a0b3d6; line-height: 26px;word-wrap: break-word;overflow-x: hidden;overflow-y: auto;border-color: rgba(82, 168, 236, 0.8);box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}
+#add-cooperate div[id='synopsis']{min-height: 60px;}  
+    
 /*   footer  css */
 footer{text-align: center;}
 hr{border-color:#2ac305;}

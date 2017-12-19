@@ -1,0 +1,50 @@
+<form id="add-cooperate" name="myform" class="row-fluid">
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">学校名：</span>
+		<div contenteditable="true" id="name" class="col-xs-3"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">学校LOGO：</span>
+    	<input type="file" class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+    ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100">
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">学校简介：</span>
+		<div contenteditable="true" id="synopsis" class="col-xs-7"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">招生对象：</span>
+		<div contenteditable="true" id="zsdx" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">报名条件：</span>
+		<div contenteditable="true" id="bmtj" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">报名方式：</span>
+		<div contenteditable="true" id="bmff" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">招生层次：</span>
+		<div contenteditable="true" id="zscc" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">录取方法：</span>
+		<div contenteditable="true" id="lqff" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">学习方式：</span>
+		<div contenteditable="true" id="xxfs" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">入学考试：</span>
+		<div contenteditable="true" id="rxks" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<span class="col-xs-2 text-center">证书颁发：</span>
+		<div contenteditable="true" id="zsbf" class="col-xs-5"><br /></div>
+	</div>
+	<div class="col-xs-offset-1 clearfix">
+		<button id="btn" ng-click="add()" ng-disabled="flag" class="col-xs-offset-6 col-xs-1 btn btn-primary">确认添加</button>
+	</div>
+</form>
