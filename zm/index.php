@@ -20,6 +20,8 @@ require_once "../include.php";
 	<script src="../../js/ng-file-upload.min.js"></script>
     <script src="../../js/ng-file-upload-shim.min.js"></script>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/filter.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="container-fluid w1200">
 	<header>

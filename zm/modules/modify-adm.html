@@ -17,17 +17,17 @@
   			<input type="text" ng-change="newAdm(adm)" class="col-xs-3" id="email" ng-model="adm.email">
 		</div>
   		<div class="row-fluid col-xs-offset-1">			
-			<input type="submit" ng-disabled="pop" class="col-xs-1 col-xs-offset-3" ng-click="subFn()" value="修改"/>
+			<input type="submit" ng-disabled="pop" title="{{text|reverse:pop}}" class="col-xs-1 col-xs-offset-3" ng-click="subFn()" value="修改"/>
 		</div>
 	</form>
-	<div class="pop alert alert-warning" ng-show="pop">
+	<div class="pop alert alert-warning" ng-show="flag">
 		<h3>确定修改吗？</h3>
 		<div class="row btn-box">
 			<div class="col-xs-6">
 				<button ng-click="cancelFn()" class="btn btn btn-primary">取消</button>
 			</div>
 			<div class="col-xs-6">
-				<button ng-click="confirmFn(adm.id)" class="btn btn btn-primary">确认</button>				
+				<button ng-click="confirmFn(adm)" class="btn btn btn-primary">确认</button>				
 			</div>
 		</div>
 	</div>

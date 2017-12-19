@@ -28,3 +28,14 @@ function logout(){
 function addadm($table, $array){
 	return insert($table,$array);
 }
+// 修改管理员
+function updateAdm($table, $array){
+	$id = $array["id"];
+	$arr = [
+	    "username" => $array["username"],
+	    "account" => $array["account"],
+	    "email" => $array["email"],
+	    "tel" => $array["tel"],
+	];
+	return update($table,$arr,"id=".$id);
+}

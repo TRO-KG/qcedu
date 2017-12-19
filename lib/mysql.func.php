@@ -32,8 +32,9 @@ function update($table,$array,$where=null){
 		$str.=$sep.$key."='".$val."'";
  	}
 	$sql = "update {$table} set {$str}".($where == null?null:" where ".$where);
-	mysql_query($sql);
-	return mysql_affected_rows();
+	$con = connect();
+	mysqli_query($con,$sql);
+	return mysqli_affected_rows($con);
 }
 /*
  * 删除数据

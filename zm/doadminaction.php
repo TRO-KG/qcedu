@@ -50,6 +50,13 @@ elseif("modifyadm" == $act){
 	$row = json_encode(checkAdmin($sql));
 	echo $row;
 }
+elseif("updateadm" == $act){
+	$table = "qc_admin";
+	$array = $_POST;
+	$row = updateAdm($table, $array);
+	var_dump($row);
+//	echo $row;
+}
 //elseif("addCooperate" == $act){
 //	$table = "qc_cooperate";
 //	$arr = $_POST;
