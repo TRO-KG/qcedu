@@ -63,7 +63,19 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 #add-cooperate>div{padding: 10px 0;}
 #add-cooperate div[contenteditable="true"]{padding: 2px; outline: 0; border: 1px solid #a0b3d6; line-height: 26px;word-wrap: break-word;overflow-x: hidden;overflow-y: auto;border-color: rgba(82, 168, 236, 0.8);box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}
 #add-cooperate div[id='synopsis']{min-height: 60px;}  
-    
+ 
+ /*   list-teacher    */
+.listteacher table {color: #fff;}
+.listteacher .top-tel table{background-color: #f195c4;}
+.listteacher .top-tel span{color: #e414ea;}
+.listteacher .right-tel table{background-color: #8bb6f5;}
+.listteacher .right-tel span{color: #496ee9;}
+.listteacher .bottom-tel table{background-color: #30de2e;}
+.listteacher .bottom-tel span{color:#30de2e;}
+.listteacher .top-edit form {background-color: #fbb;padding-top:10px;}
+.listteacher .top-edit h4{color: #fbb;}
+.listteacher .top-edit button{height: 26px;line-height: 26px;padding-top: 0;}
+.listteacher .top-edit .close-box{width: 18px;height: 18px;background-color: #f00;line-height: 18px;text-align: center;border-radius: 10px;margin-top: 5px;margin-right: 5px;cursor:pointer;}
 /*   footer  css */
 footer{text-align: center;}
 hr{border-color:#2ac305;}

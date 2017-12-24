@@ -1,4 +1,4 @@
-<?php include_once "../../include.php"; ?>
+<?php require_once '../../include.php' ?>
 <div class="row">
 	<div class="col-xs-12 systitle row">
 		<h3 class="text-center">系统信息</h3>

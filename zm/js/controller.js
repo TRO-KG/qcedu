@@ -1,6 +1,61 @@
 'use strict';
 /*   控制器     */
-adm.controller("modifyadm",["$stateParams","$rootScope","$scope","$http",function($stateParams,$rootScope,$scope,$http){
+adm.controller("mainCtrl",["$scope",function($scope){
+	
+}])
+.controller("listteacher",["$scope","$http",function($scope,$http){
+	$scope.editTea = function(item){
+		$scope.editFlag = true;
+		$scope.editItem = item;
+	}
+	$scope.getTeachers = function(){
+		$http({
+			method: 'GET',
+			url: '/zm/doadminaction.php?act=listteacher'
+		}).then(function successCallback(res) {
+				$scope.top = res.data.top;
+				$scope.right = res.data.right;
+				$scope.bottom = res.data.bottom;
+			}, function errorCallback(err) {
+				console.log(err);
+		});
+	}
+	$scope.getTeachers();
+	$scope.closeBox = function(){
+		$scope.editFlag = false;
+		$scope.editItem = null;
+		$scope.getTeachers();
+	}
+	$scope.confirmFn = function(data){
+		console.log(data);
+		$http({
+			method:'post',
+		    url: '/zm/doadminaction.php?act=editteacher',
+		    data:data,
+		    headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+			transformRequest: function(obj) {
+				var str = [];
+				for(var p in obj){
+					str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+				}
+				return str.join("&");
+				}
+		}).then(function successCallback(res) {
+				$scope.getTeachers();
+				$scope.editFlag = false;
+				$scope.editItem = null;
+		   }, function errorCallback(err) {
+				console.log(err);
+		});
+	}
+}])
+.controller("addteacher",["$scope","$http",function($scope,$http){
+	console.log($scope);
+	$scope.add = function(data){
+		console.log(data);
+	}
+}])
+.controller("modifyadm",["$stateParams","$rootScope","$scope","$http",function($stateParams,$rootScope,$scope,$http){
 	$scope.pop = true;
 	$scope.text = "未作任何修改！";
 	$scope.flag = false;
@@ -13,10 +68,10 @@ adm.controller("modifyadm",["$stateParams","$rootScope","$scope","$http",functio
 	$scope.cancelFn = function(){
 		$scope.pop = false;
 		$scope.flag = false;
+		$scope.resFlag = true;
+		$scope.modifyMsg = "确定修改吗？";
 	}
 	$scope.confirmFn = function(adm){
-		$scope.pop = false;
-		$scope.flag = false;
 		$scope.getAdm(adm,"updateadm");
 	}
 	$scope.newAdm =function(a){
@@ -37,6 +92,12 @@ adm.controller("modifyadm",["$stateParams","$rootScope","$scope","$http",functio
 				}
 		}).then(function successCallback(res) {
 				$scope.adm = res.data;
+				$scope.modifyMsg = "确定修改吗？";
+				$scope.resFlag = true;
+				if("updateadm" == act){
+					$scope.modifyMsg = "修改成功！！！";
+					$scope.resFlag = false;
+				}
 		   }, function errorCallback(err) {
 				console.log(err);
 		});
@@ -51,11 +112,8 @@ adm.controller("modifyadm",["$stateParams","$rootScope","$scope","$http",functio
 		page     : 1
 	});
 	$scope.selectPage = function(page){
-		 //不能小于1大于最大
         if (page < 1 || page > $scope.totalPages) return;
-        //最多显示分页数5
         if (page > 2) {
-            //因为只显示5个页数，大于2页开始分页转换
             var newpageList = [];
             for (var i = (page - 3) ; i < ((page + 2) > $scope.totalPages ? $scope.totalPages : (page + 2)) ; i++) {
                 newpageList.push(i + 1);
@@ -115,6 +173,7 @@ adm.controller("modifyadm",["$stateParams","$rootScope","$scope","$http",functio
                 $scope.pageList.push(i + 1);
           	}
 			$scope.isActivePage($scope.data.page);
+			$scope.$applyAsync();
 		   }, function errorCallback(err) {
 			console.log("err：" + err);	
 		});
@@ -123,8 +182,24 @@ adm.controller("modifyadm",["$stateParams","$rootScope","$scope","$http",functio
         return $scope.data.page == page;
     };
 	$scope.getAdmList($scope.data);
-	$scope.editFn = function(id){
-		console.log(id);
+	$scope.deleteAdm = function(id){
+		$http({
+			method:'post',
+		    url: '/zm/doadminaction.php?act=deleteadm',
+		    data:id,
+		    headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+		    transformRequest: function(obj) {
+				var str = [];
+				for(var p in obj){
+					str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+				}
+				return str.join("&");
+			}
+		}).then(function successCallback(res) {
+			$scope.getAdmList($scope.data);
+		   }, function errorCallback(err) {
+			console.log("err：" + err);	
+		});
 	}
 }])
 .controller("addadm",["$scope", "$http",function($scope,$http){

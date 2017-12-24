@@ -21,7 +21,8 @@
 			      <td>{{ adm.tel }}</td>
 			      <td>{{ adm.email }}</td>
 			      <td>
-			          <a ui-sref="modifyadm({id:adm.id})"><span class=""></span>编辑</a>
+			          <a ui-sref="modifyadm({id:adm.id})"><i class="fa fa-pencil fa-fw"></i>&nbsp;编辑</a>&nbsp;&nbsp;&nbsp;
+			          <a ng-click="deleteAdm({id:adm.id})"><i class="fa fa-trash-o fa-lg"></i>&nbsp;删除</a>
 			      </td>
 			    </tr>
 			</tbody>

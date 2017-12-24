@@ -1,8 +1,19 @@
 'use strict';
 var adm = angular.module('adm', ['ui.router', 'ngFileUpload']);
 adm.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('homepage');
+	$urlRouterProvider.otherwise('/');
 	$stateProvider
+	.state("/", {
+		url:"/",
+		views:{
+			menu:{
+				templateUrl:"menu/homeMenu.html"
+			},
+			content:{
+				templateUrl:"modules/sys.php"
+			}
+		}	
+	})
 	.state("homepage", {
 		url:"/homepage",
 		views:{
@@ -10,7 +21,53 @@ adm.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 				templateUrl:"menu/homeMenu.html"
 			},
 			content:{
-				templateUrl:"modules/sys.php"
+				templateUrl:"modules/list-activity.html"
+			}
+		}	
+	})
+	.state("activity", {
+		url:"/activity",
+		views:{
+			menu:{
+				templateUrl:"menu/homeMenu.html"
+			},
+			content:{
+				templateUrl:"modules/list-activity.html"
+			}
+		}	
+	})
+	.state("bannerpic", {
+		url:"/bannerpic",
+		views:{
+			menu:{
+				templateUrl:"menu/homeMenu.html"
+			},
+			content:{
+				templateUrl:"modules/list-bannerpic.html"
+			}
+		}	
+	})
+	.state("teachers", {
+		url:"/teachers",
+		views:{
+			menu:{
+				templateUrl:"menu/homeMenu.html"
+			},
+			content:{
+				templateUrl:"modules/list-teachers.html",
+				controller:"listteacher"
+			}
+		}	
+	})
+	.state("addteacher", {
+		url:"/addteacher",
+		views:{
+			menu:{
+				templateUrl:"menu/homeMenu.html"
+			},
+			content:{
+				templateUrl:"modules/add-teacher.html",
+				controller:"addteacher"
 			}
 		}	
 	})

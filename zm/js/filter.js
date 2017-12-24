@@ -3,4 +3,10 @@ adm.filter('reverse',function(){
 			text = flag ? text : null;
 			return text;
 	    }
+	})
+	.filter('cancelFlag',function(){
+		return function(cancelBtn,flag) {
+			cancelBtn = flag ? "取消" : "关闭";
+			return cancelBtn;
+	    }
 	});

@@ -42,15 +42,16 @@ function update($table,$array,$where=null){
 function delete($table,$where=null){
 	$where = $where == null?null : " where ". $where;
 	$sql = "delete from {$table} {$where}";
-	mysql_query($sql);
-	return mysql_affected_rows();
+	$con = connect();
+	mysqli_query($con,$sql);
+	return mysqli_affected_rows($con);
 }
 /*
  * 查找数据
  * (查找指定数据)
  * */
 
-function fetchOne($sql, $result_type = MYSQL_ASSOC){
+function fetchOne($sql){
 	$con = connect();
    	$result = mysqli_query($con, $sql);
 	if ($result->num_rows > 0) {
@@ -66,7 +67,7 @@ function fetchOne($sql, $result_type = MYSQL_ASSOC){
  * 查找数据
  * （查找所有数据）
  * */
-function fetchAll($sql, $result_type = MYSQL_ASSOC){
+function fetchAll($sql){
 	$con = connect();
 	$result = mysqli_query($con,$sql);
 	while($row = $result->fetch_assoc()) {

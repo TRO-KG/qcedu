@@ -54,8 +54,24 @@ elseif("updateadm" == $act){
 	$table = "qc_admin";
 	$array = $_POST;
 	$row = updateAdm($table, $array);
-	var_dump($row);
-//	echo $row;
+	echo json_encode($row);
+}
+elseif("deleteadm" == $act){
+	$table = "qc_admin";
+	$array = $_POST;
+	$row = deleteAdm($table, $array);
+//	echo json_encode($row);
+	echo $row;
+}
+elseif("listteacher" == $act){
+	$row = getTeacherList();
+	echo $row;
+}
+elseif("editteacher" == $act){
+	$table = "qc_teachers";
+	$array = $_POST;
+	$row = editTeaFnc($table, $array);
+	echo $row;
 }
 //elseif("addCooperate" == $act){
 //	$table = "qc_cooperate";

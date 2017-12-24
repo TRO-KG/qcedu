@@ -1,5 +1,4 @@
 <?php 
-require_once '../include.php';
 function pageFun($table,$pageSize,$page){
 	$sql = "select * from {$table}";
 	// 得到数据条数

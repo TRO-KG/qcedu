@@ -33,3 +33,18 @@ CREATE TABLE `qc_cooperate`(
 PRIMARY KEY ( id ),
 UNIQUE KEY `name` (`name`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--创建客服老师数据表
+DROP TABLE IF EXISTS `qc_teachers`;
+CREATE TABLE `qc_teachers`(
+`id` tinyint unsigned AUTO_INCREMENT,
+`username` varchar(20) NOT NULL,
+`account` varchar(20) NOT NULL,
+`email` varchar(50),
+`qq` varchar(20) NOT NULL,
+`tel` varchar(11) NOT NULL UNIQUE,
+`submission_date` TIMESTAMP,
+`toggle` tinyint unsigned,
+`position` tinyint unsigned,
+PRIMARY KEY ( id ),
+UNIQUE KEY `qq` (`account`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

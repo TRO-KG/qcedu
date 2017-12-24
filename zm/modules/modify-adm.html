@@ -21,13 +21,13 @@
 		</div>
 	</form>
 	<div class="pop alert alert-warning" ng-show="flag">
-		<h3>确定修改吗？</h3>
+		<h3>{{modifyMsg}}</h3>
 		<div class="row btn-box">
 			<div class="col-xs-6">
-				<button ng-click="cancelFn()" class="btn btn btn-primary">取消</button>
+				<button ng-click="cancelFn()" class="btn btn btn-primary">{{cancelBtn|cancelFlag:resFlag}}</button>
 			</div>
-			<div class="col-xs-6">
-				<button ng-click="confirmFn(adm)" class="btn btn btn-primary">确认</button>				
+			<div class="col-xs-6" ng-show="resFlag">
+				<button ng-click="confirmFn(adm)" class="btn btn-primary">确认</button>
 			</div>
 		</div>
 	</div>
