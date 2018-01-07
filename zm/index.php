@@ -13,15 +13,18 @@ require_once "../include.php";
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/wangEditor.css"/>
 	
 	<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../../js/ng-file-upload.min.js"></script>
     <script src="../../js/ng-file-upload-shim.min.js"></script>
+    <script type="text/javascript" src="js/wangEditor.js"></script>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/filter.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/directive.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="container-fluid w1200">
 	<header>

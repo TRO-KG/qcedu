@@ -1,7 +1,7 @@
 'use strict';
 /*   控制器     */
-adm.controller("mainCtrl",["$scope",function($scope){
-	
+adm.controller("addArticle",["$scope",function($scope){
+	$scope.editorContent = '';
 }])
 .controller("listteacher",["$scope","$http",function($scope,$http){
 	$scope.editTea = function(item){

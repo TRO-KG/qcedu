@@ -1,1 +1,20 @@
-添加文章
+<div class="add-article row-fluid">
+	<div class="add-article-title">
+		<input type="text" placeholder="请输入文章标题" />
+	</div>
+	<div class="add-article-class col-xs-offset-8">
+		<span class="article-class-span">分类：</span>
+		<select class="add-article-se">
+		  <option value="0">Volvo</option>
+		  <option value="1">Saab</option>
+		  <option value="2">Opel</option>
+		  <option value="3">Audi</option>
+		</select>
+		<!--<span class="btn btn-primary"><i class="fa fa-plus"></i>分类</span>-->
+	</div>
+    <div id="editor-trigger" ng-model="editorContent" contenteditable="true">
+    </div>
+    <hr>
+    <p><b>以下是编辑器的内容：</b></p>
+    <p ng-bind="editorContent"></p>
+</div>

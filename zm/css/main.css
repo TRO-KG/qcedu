@@ -76,6 +76,15 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 .listteacher .top-edit h4{color: #fbb;}
 .listteacher .top-edit button{height: 26px;line-height: 26px;padding-top: 0;}
 .listteacher .top-edit .close-box{width: 18px;height: 18px;background-color: #f00;line-height: 18px;text-align: center;border-radius: 10px;margin-top: 5px;margin-right: 5px;cursor:pointer;}
+
+/*     add-article    */
+.add-article {background-color:#fffbe8;border: 1px solid #ddd;padding:20px;}
+.add-article-title {text-align: center;}
+.add-article-title input{border:1px dashed #e6c0c0;text-align: center;background-color: transparent;height: 30px;width: 50%;color: #000;}
+.add-article-title input:hover{border:2px solid #ffc600;outline:0 none;}
+.add-article-class {margin-top:16px;}
+.add-article-se{width: 100px;}
+/*.article-class-span {margin-right: 5px;}*/
 /*   footer  css */
 footer{text-align: center;}
 hr{border-color:#2ac305;}

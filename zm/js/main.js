@@ -138,7 +138,8 @@ adm.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 				templateUrl:"menu/articleMenu.html"
 			},
 			content:{
-				templateUrl:"modules/add-article.html"
+				templateUrl:"modules/add-article.html",
+				controller:"addArticle"
 			}
 		}	
 	})
