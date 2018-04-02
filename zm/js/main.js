@@ -21,7 +21,7 @@ adm.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 				templateUrl:"menu/homeMenu.html"
 			},
 			content:{
-				templateUrl:"modules/list-activity.html"
+				templateUrl:"modules/list-bannerpic.html"
 			}
 		}	
 	})
@@ -126,7 +126,8 @@ adm.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 				templateUrl:"menu/articleMenu.html"
 			},
 			content:{
-				templateUrl:"modules/list-article.html"
+				templateUrl:"modules/list-article.html",
+				controller:"listArticle"
 			}
 		},
 		controller:"articles"
@@ -142,6 +143,30 @@ adm.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 				controller:"addArticle"
 			}
 		}	
+	})
+	.state("detailsarticle", {
+		url: '/detailsarticle/:id',
+		views:{
+			menu:{
+				templateUrl:"menu/adminMenu.html"
+			},
+			content:{
+				templateUrl: 'modules/details-article.html',
+				controller:"detailsArticle"
+			}
+		}
+	})
+	.state("modifyarticle", {
+		url: '/modifyarticle/:id',
+		views:{
+			menu:{
+				templateUrl:"menu/adminMenu.html"
+			},
+			content:{
+				templateUrl: 'modules/modify-article.html',
+				controller:"modifyArticle"
+			}
+		}
 	})
 	.state("cooperate",{
 		url:"/cooperate",

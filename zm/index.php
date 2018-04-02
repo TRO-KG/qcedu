@@ -12,8 +12,8 @@ require_once "../include.php";
 	<link rel="shortcut icon" href="../favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="css/wangEditor.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	
 	<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>

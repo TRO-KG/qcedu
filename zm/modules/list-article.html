@@ -1,3 +1,61 @@
 <div class="listarticle">
-	文章列表
+	<table class="table">
+		<thead>
+			<tr >
+				<th>标题</th>
+				<th>文章类别</th>
+				<th>作者</th>
+				<th>发表日期</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="article in articles">
+				<td><a ui-sref="detailsarticle({id:article.article_id})">{{ article.article_title }}</a></td>
+				<td>{{ article.article_class }}</td>
+				<td><a href="">{{ article.article_author }}</a></td>
+				<td>{{ article.sub_time }}</td>
+				<td>
+					 <a ui-sref="modifyarticle({id:article.article_id})"><i class="fa fa-pencil fa-fw"></i>编辑</a>&nbsp;&nbsp;
+					<a href="" ng-click="deleteArticle({id:article.article_id})"><i class="fa fa-trash-o fa-lg"></i>&nbsp;删除</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<nav class="row-fluid">
+		<div class="adm-list-infomsg col-xs-6">
+			<span>
+				显示第{{ data.pageSize * (data.page-1) +1 }}条到{{ (data.pageSize * (data.page-1) +1)+(adms.length - 1) }}条记录，总共{{ adms.totalRows }}条记录每页显示
+			</span>
+			<form class="adm-table-form" novalidate="novalidate">
+				<select ng-model="pageSize" ng-options="v.label for v in pageSizeList" ng-change="resetTable()"></select>
+			</form>
+			 <span>条记录</span>
+		</div>
+        <ul class="pagination col-xs-6">
+        	<li>
+                <a ng-click="firstPage()">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a ng-click="prevPage()">
+                    <span>上一页</span>
+                </a>
+            </li>
+            <li ng-repeat="page in pageList track by $index" ng-class="{active: isActivePage(page)}" >
+                <a ng-click="selectPage(page)">{{ page }}</a>
+            </li>
+            <li>
+                <a ng-click="nextPage()">
+                    <span>下一页</span>
+                </a>
+            </li>
+            <li>
+                <a ng-click="endPage()">
+                    <span>尾页</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>

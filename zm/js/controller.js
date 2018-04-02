@@ -1,7 +1,26 @@
 'use strict';
 /*   控制器     */
-adm.controller("addArticle",["$scope",function($scope){
+adm.controller("listArticle",["$scope", "$http", function($scope, $http){
+	$http.get('./js/data.json',{"id":"1"}).then(function(res){
+		$scope.articles = res.data.rows;
+		
+		console.log($scope.data);
+		console.log(res);
+	}, function(err){
+		console.log(err);
+	});
+	$scope.deleteArticle = function(id){
+		console.log(id);
+	}
+}])
+.controller("addArticle",["$scope",function($scope){
 	$scope.editorContent = '';
+}])
+.controller("detailsArticle",["$scope",function($scope){
+	
+}])
+.controller("modifyArticle",["$scope",function($scope){
+	
 }])
 .controller("listteacher",["$scope","$http",function($scope,$http){
 	$scope.editTea = function(item){

@@ -11,6 +11,23 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 .tool{padding-right: 20px;}
 .tool li{float: left;padding: 0 5px;margin: 0 15px;height: 30px; line-height: 30px;}
 .tool a{color: #55d8c1;font-size: 16px;}
+/*  list-pic  */
+.used-pic .used-title{background-color: #1010de;color: #fff;font-size: 20px;margin-left: 4px;margin-top: -20px;padding: 6px 20px;}
+.used-pic-list{border: 1px solid #1010de;margin-left: 4px;}
+.used-pic-list li>div{line-height: 152px;text-align:center;}
+/*.list-pic
+.list-pic
+.list-pic
+.list-pic
+*/
+    
+
+    
+    
+    
+    
+    
+
 /*  adm  */
 .adm-left{background-color: #000;border-right: 1px solid #aec8e0;text-align: center;}
 .admtitle{background-color: #b7b3b3;font-size: 20px;font-weight: 400;height: 30px;line-height: 30px;}
@@ -79,12 +96,18 @@ header .logobox{background-color: rgb(97, 239, 113);height: 78px;padding: 0 20px
 
 /*     add-article    */
 .add-article {background-color:#fffbe8;border: 1px solid #ddd;padding:20px;}
-.add-article-title {text-align: center;}
-.add-article-title input{border:1px dashed #e6c0c0;text-align: center;background-color: transparent;height: 30px;width: 50%;color: #000;}
+.add-article-title {text-align: center;font-size: 24px;}
+.add-article-title input{border:1px dashed #e6c0c0;text-align: center;background-color: transparent;height: 36px;width: 50%;color: #000;line-height: 36px;}
 .add-article-title input:hover{border:2px solid #ffc600;outline:0 none;}
-.add-article-class {margin-top:16px;}
-.add-article-se{width: 100px;}
-/*.article-class-span {margin-right: 5px;}*/
+.add-article-class {margin-top:16px;height: 26px;line-height: 26px;}
+.add-article-se {text-align: center;width: 100px;}
+.add-article .clearcon{padding: 2px 14px;}
+.add-article .wangEditor-container .wangEditor-txt{min-height: 350px;}
+.add-article .wangEditor-container{margin-top: 12px;}
+.add-article .wangEditor-menu-container .menu-group{border-right:1px solid #e6c0c0;}
+.add-article .subtool{margin-top: 10px;}
+.add-article .subtool div{height: 26px;line-height: 26px;padding:0;margin: 0;}
+
 /*   footer  css */
 footer{text-align: center;}
 hr{border-color:#2ac305;}
